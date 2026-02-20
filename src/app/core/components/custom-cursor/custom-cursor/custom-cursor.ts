@@ -7,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrl: './custom-cursor.scss',
 })
 export class CustomCursor {
+  isActive = false;
+  cursorText = '';
 
+  // Diese Funktion wird von außen aufgerufen
+  setHoverState(active: boolean, text: string = '') {
+    this.isActive = active;
+    this.cursorText = text;
+  }
 }

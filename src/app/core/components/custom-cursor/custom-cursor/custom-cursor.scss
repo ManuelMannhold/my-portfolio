@@ -1,0 +1,14 @@
+.cursor-dot {
+  width: 20px;
+  height: 20px;
+  background: white;
+  transition: width 0.3s, height 0.3s;
+}
+
+/* Wenn isActive true ist, fügen wir eine Klasse hinzu oder nutzen [class.active] */
+.cursor-dot.active {
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+}

@@ -1,1 +1,55 @@
-/* You can add global styles to this file, and also import other style files */
+/* src/styles.scss */
+
+// --- Farbpalette aus dem Design ---
+:root {
+  --bg-app: #0a0a0a;          // Sehr dunkler Hintergrund für die gesamte App
+  --bg-card: #121212;         // Dunkelgrau für die Kacheln
+  --bg-card-hover: #1a1a1a;   // Etwas helleres Grau beim Hover
+  --primary-blue: #007bff;    // Das leuchtende Blau für Buttons und Akzente
+  --text-primary: #ffffff;    // Weißer Text für Überschriften
+  --text-secondary: #a0a0a0;  // Hellgrauer Text für Beschreibungen
+  --border-color: rgba(255, 255, 255, 0.05); // Sehr dezenter Rahmen
+}
+
+// --- Globale Resets & Typografie ---
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+// --- Globale Button Styles ---
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  transition: all 0.3s ease;
+
+  // Blauer Hauptbutton (z.B. "Download CV")
+  &.btn-primary {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+
+    &:hover {
+      background-color: darken(#007bff, 10%);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+    }
+  }
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}

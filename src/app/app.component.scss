@@ -1,0 +1,146 @@
+.bento-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: minmax(180px, auto);
+  gap: 24px;
+
+  .tile {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
+    position: relative;
+
+    &:hover {
+      transform: translateY(-5px);
+      background-color: var(--bg-card-hover);
+      border-color: rgba(0, 123, 255, 0.2);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    }
+
+    &.landing-tile {
+      grid-column: span 2;
+      grid-row: span 2;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 30px;
+
+      .profile-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--primary-blue);
+      }
+
+      .hero-content {
+        h1 {
+          font-size: 2.5rem;
+          margin-bottom: 0.5rem;
+          .highlight { color: var(--primary-blue); }
+        }
+        p {
+          color: var(--text-secondary);
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
+
+    &.projects-tile {
+      grid-column: span 2;
+      padding: 0;
+
+      .project-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .project-content {
+        padding: 25px;
+        h3 { margin-bottom: 10px; }
+        p { color: var(--text-secondary); font-size: 0.9rem; }
+      }
+    }
+
+    &.stack-tile, &.about-tile {
+      justify-content: center;
+      
+      h3 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &::before {
+          content: '';
+          display: block;
+          width: 8px;
+          height: 8px;
+          background-color: var(--primary-blue);
+          border-radius: 50%;
+        }
+      }
+
+      // Beispiel für eine Liste im Tech Stack
+      ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        li {
+          background: rgba(255, 255, 255, 0.05);
+          padding: 8px 16px;
+          border-radius: 20px;
+          font-size: 0.85rem;
+          font-weight: 500;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr; // Alles untereinander auf kleinen Screens
+    
+    .tile.landing-tile,
+    .tile.projects-tile {
+      grid-column: span 1; // Auch die großen Kacheln nehmen nur 1 Spalte ein
+    }
+
+    .tile.landing-tile {
+      flex-direction: column; // Foto und Text untereinander
+      text-align: center;
+    }
+  }
+}
+
+app-landing-page {
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+}
+
+app-header {
+  width: 100%;
+}

@@ -1,0 +1,119 @@
+{
+  "header": {
+    "aboutMe": "Über mich",
+    "skill": "Fähigkeiten",
+    "project": "Portfolio"
+  },
+  "landing": {
+    "iam": "Ich bin",
+    "developer": "Frontend Entwickler",
+    "talk": "Kontakt aufnehmen",
+    "scroll": "Runterscrollen"
+  },
+  "aboutme": {
+    "aboutme": "Über mich",
+    "story": "Mein Interesse an Informationstechnologie und insbesondere an der Softwareentwicklung hat mich dazu motiviert, bei der Developer Akademie fundierte Kenntnisse in JavaScript, TypeScript und Angular zu erwerben. In praxisnahen Projekten konnte ich sowohl eigenständig als auch im Team wertvolle Erfahrungen in der Anwendungsentwicklung sammeln. Diese Fähigkeiten möchte ich nun in einem professionellen Umfeld weiter vertiefen und einsetzen.",
+    "newtask": "Ich bin aufgeschlossen und immer auf der Suche nach persönlichen Herausforderungen, um mein Wissen ständig zu erweitern.",
+    "job": "Für mich bedeutet Programmieren weit mehr als das reine Schreiben von Code: Es ist ein strukturiertes und kreatives Lösen technischer Herausforderungen. Mein Ziel ist es, komplexe Anforderungen in benutzerfreundliche und effiziente Anwendungen umzusetzen und so einen nachhaltigen Beitrag zum Projekterfolg zu leisten."
+  },
+  "myskills": {
+    "skill": "Meine Fähigkeiten",
+    "projects": "Ich habe meine Frontend-Entwicklungsfähigkeiten erweitert, die es mir ermöglicht haben, verschiedene reale Projekte zu erstellen.",
+    "contact": "Kontakt"
+  },
+  "portfolio": {
+    "allProjects": "Alle Projekte",
+    "examples": "Hier sind ein paar Beispiele meiner Projekte die ich Selbstständig, oder in Gruppenarbeit programmiert habe.",
+    "join": "Ein Task manager inspiriert vom Kanban System. Erstellen und organisieren einzelner Tasks per drag and drop funktion.",
+    "join-subtext": "Mein Part: AddTask / AddTask Board / Datenschutz / Rechtlicher Hinweis",
+    "pollo": "Ein Spiel das mit Javascript in Objekt Orientierter Programmierung geschrieben wurde.",
+    "portfolio": "Mein Portfolio mit Projekten, die ich alleine oder in Teamarbeit programmiert habe.",
+    "pokedex": "Ein selbst programmierter Pokédex auf Basis der PokéAPI.",
+    "pronode": "Eine performante Angular-Anwendung zur Organisation von Notizen und Ordnern. Das Projekt kombiniert Echtzeit-Datenbank-Synchronisierung via Firebase mit einem modernen Glassmorphism-Design und intuitiven UX Design"
+  },
+  "testimonials": [
+    {
+      "author": "Ina Penner",
+      "text": "Manuel zeigte in unserer Zusammenarbeit großes Engagement bei der Umsetzung unserer Webanwendung. Bei der Arbeit war er immer bereit seine Expertise einzubringen, somit unterstützte er das Team mit innovativen Ansätzen und stand Teammitglieder aktiv bei, wenn diese auf Herausforderungen stießen. Seine Fähigkeiten und seine Teamorientierung machte ihn zu einer wertvollen Ergänzung unseres Teams."
+    },
+    {
+      "author": "Miriam Fuchs",
+      "text": "Ich hatte die Gelegenheit, mit Manuel an einem Projekt zusammenzuarbeiten, und dabei konnte er vor allem durch seine Fachkenntnisse und seine Kreativität überzeugen. Besonders schätze ich seine Fähigkeit, Aufgaben effizient umzusetzen und neue Ideen einzubringen. Er geht offen auf Anregungen ein und zeigt dabei eine hohe Flexibilität, was die Zusammenarbeit sehr dynamisch gestaltet hat. Manuel hat sich gut in das Team integriert und mit seiner positiven Einstellung zur guten Arbeitsatmosphäre beigetragen."
+    },
+    {
+      "author": "Christopher Hampel",
+      "text": "Die Zusammenarbeit in unserem Teamprojekt mit Manuel Mannhold hat zu jeder Zeit sehr gut funktioniert. Durch seine fundierten Kenntnisse in der Webentwicklung war er ein maßgeblicher Faktor für den Erfolg unseres Softwareprojekts. Vor allem seine Hilfsbereitschaft bei Fragen und Problemen anderer Teammitglieder möchte ich hervorheben."
+    }
+  ],
+  "contact": {
+    "contactheader": "Kontakt",
+    "questions": "Haben Sie fragen?",
+    "messageme": "Kontaktieren Sie mich gerne über das Nachrichtenfeld falls es Fragen oder Anmerkungen gibt",
+    "frontend": "Sie brauchen einen Frontend Developer?",
+    "contactme": "Kontaktieren Sie mich",
+    "addme": "Bitte Namen eingeben",
+    "addmail": "Bitte gültige Email eingeben",
+    "addmessage": "Bitte Nachricht eingeben",
+    "accept": "Ich akzeptiere die",
+    "policy": "Datenschutzerklärung",
+    "sendmessage": "Nachricht Abschicken",
+    "messagesend": "Die Nachricht wurde gesendet",
+    "addname": "Namen eingeben.....",
+    "placeholdermessage": "Nachricht eingeben.....",
+    "placeholdermail": "Email eingeben....."
+  },
+  "imprint": {
+    "imprint": "Impressum"
+  },
+  "responsmenu": {
+    "aboutme": "Über mich",
+    "skill": "Fähigkeiten",
+    "portfolio": "Portfolio",
+    "contact": "Kontakt",
+    "imprint": "Impressum"
+  },
+  "policy": {
+    "policy": "Datenschutz",
+    "subheader": "Wir legen großen Wert auf den Schutz Ihrer persönlichen Daten. In dieser Datenschutzrichtlinie erfahren Sie, wie wir Ihre Daten erheben, speichern und nutzen.",
+    "introductionheader": "Einleitung",
+    "subintro": "Wir erheben Daten wie Name, E-Mail-Adresse und Telefonnummer.",
+    "introductiontext1": "Erfasste Daten: Diese Daten werden genutzt, um unsere Dienstleistungen anzubieten und zu verbessern.",
+    "introductiontext2": "Verwendungszweck: Ihre Daten werden vertraulich behandelt und niemals ohne Ihre Zustimmung weitergegeben.",
+    "introductiontext3": "Schutzmaßnahmen: Wir setzen moderne Sicherheitsmaßnahmen ein, um Ihre Daten vor unbefugtem Zugriff zu schützen.",
+    "datarecordheader": "Welche Daten werden erfasst?",
+    "datasub": "Nutzer haben das Recht, ihre Daten einzusehen, zu ändern oder löschen zu lassen.",
+    "data1": "Sie können jederzeit eine Kopie Ihrer gespeicherten Daten anfordern.",
+    "data2": "Alle Daten werden gemäß den geltenden Datenschutzgesetzen gespeichert.",
+    "data3": "Wir bieten volle Transparenz über die Nutzung Ihrer Daten.",
+    "datausedhead": "Wie werden die Daten verwendet?",
+    "datausedsub": "Sie können Änderungen oder Löschungen Ihrer Daten über unsere Kontaktinformationen anfordern.",
+    "dataused1": "Unsere Datenschutzmaßnahmen entsprechen den höchsten Standards.",
+    "dataused2": "Sie haben das Recht, eine Beschwerde bei den Datenschutzbehörden einzureichen.",
+    "dataused3": "Alle Anfragen zu Datenschutzangelegenheiten werden innerhalb von 30 Tagen bearbeitet.",
+    "datasafetyheader": "Wie werden die Daten geschützt?",
+    "datasafetysub": "Unsere Datenschutzmaßnahmen werden regelmäßig überprüft und aktualisiert.",
+    "rightshead": "Rechte der Nutzer",
+    "rightssub": "Wir behalten uns das Recht vor, diese Richtlinie jederzeit zu ändern.",
+    "rights1": "Rechte der Nutzer: Für weitere Informationen kontaktieren Sie uns bitte per E-Mail.",
+    "rights2": "Beschwerderecht: Sie können uns auch per Post oder telefonisch erreichen.",
+    "rights3": "Zugriffsrechte: Unsere vollständigen Kontaktinformationen finden Sie unten.",
+    "rights4": "Datenlöschung:Alle Änderungen werden auf dieser Seite veröffentlicht.",
+    "rightsend": "Vielen Dank für Ihr Vertrauen.",
+    "directivehead": "Änderungen an der Richtlinie",
+    "directive": "Diese Datenschutzrichtlinie tritt am 15.12.2024 in Kraft.",
+    "contactinfohead": "Kontaktinformationen",
+    "contactssub": "Falls Sie Fragen zu dieser Richtlinie haben, kontaktieren Sie uns bitte.",
+    "contact1": "Kontakt:",
+    "contact2": "Addresse: Paul-Schreier-Straße 26, 16761 Hennigsdorf",
+    "contact3": "Telefon:",
+    "remarksheader": "Schlussbemerkungen",
+    "remarks": "Ich hoffen, dass diese Datenschutzrichtlinie alle Ihre Fragen beantwortet.",
+    "rigtsreserved": "© 2024 Manuel Mannhold. Alle Rechte vorbehalten."
+  },
+  "footer": {
+    "imprint": "Impressum"
+  },
+  "topic": {
+    "back": "Zurück"
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "header": {
+    "aboutMe": "About me",
+    "skill": "Skills",
+    "project": "Portfolio"
+  },
+  "landing": {
+    "iam": "I Am",
+    "developer": "Frontend Developer",
+    "talk": "Contact Me",
+    "scroll": "Scroll down"
+  },
+  "aboutme": {
+    "aboutme": "About me",
+    "story": "My interest in information technology, and software development in particular, motivated me to acquire solid knowledge of JavaScript, TypeScript, and Angular at the Developer Academy. Through hands-on projects, I gained valuable experience in application development, both independently and as part of a team. I am now eager to further develop and apply these skills in a professional environment.",
+    "newtask": "I am open-minded and always looking for personal challenges in order to constantly expand my knowledge.",
+    "job": "For me, programming means far more than just writing code: it is a structured and creative way of solving technical challenges. My goal is to transform complex requirements into user-friendly and efficient applications, thereby making a sustainable contribution to the success of projects."
+  },
+  "myskills": {
+    "skill": "My skills",
+    "projects": "I have expanded my frontend development skills which have enabled me to create various real-world projects.",
+    "contact": "Contact"
+  },
+  "portfolio": {
+    "allProjects": "All Projects",
+    "examples": "Here are a few examples of my projects that I have programmed independently or in group work.",
+    "join": "A task manager inspired by the Kanban system. Create and organize individual tasks using the drag and drop function.",
+    "join-subtext": "My part: AddTask / AddTask Board / Privacy Policy / Legal notice",
+    "pollo": "A game written with Javascript in Object Oriented Programming",
+    "portfolio": "A collection of projects I have developed, either individually or as part of a team.",
+    "pokedex": "A self-programmed Pokédex based on the PokéAPI.",
+    "pronode": "A high-performance Angular application for organizing notes and folders. The project combines real-time database synchronization via Firebase with a modern Glassmorphism design and intuitive UX design."
+  },
+  "testimonials": [
+    {
+      "author": "Ina Penner",
+      "text": "Manuel showed great commitment to the implementation of our web application in our collaboration. At work, he was always willing to contribute his expertise, supporting the team with innovative approaches and actively supporting team members when they encountered challenges. His skills and team orientation made him a valuable addition to our team."
+    },
+    {
+      "author": "Miriam Fuchs",
+      "text": "I had the opportunity to work with Manuel on a project and he was particularly impressed by his expertise and creativity. I particularly appreciate his ability to carry out tasks efficiently and bring in new ideas. He responds openly to suggestions and shows a high degree of flexibility, which made the collaboration very dynamic. Manuel integrated well into the team and contributed to the good working atmosphere with his positive attitude."
+    },
+    {
+      "author": "Christopher Hampel",
+      "text": "The collaboration in our team project with Manuel Mannhold worked very well at all times. Thanks to his in-depth knowledge of web development, he was a key factor in the success of our software project. I would especially like to emphasize his willingness to help other team members with questions and problems."
+    }
+  ],
+  "contact": {
+    "contactheader": "Contact",
+    "questions": "Do you have questions?",
+    "messageme": "Please feel free to contact me via the message field if you have any questions or comments",
+    "frontend": "Do you need a frontend developer?",
+    "contactme": "Contact me",
+    "addme": "Please enter name",
+    "addmail": "Please enter a valid email",
+    "addmessage": "Please enter message",
+    "accept": "I agree",
+    "policy": "Privacy Policy",
+    "sendmessage": "Send message",
+    "messagesend": "The message has been sent",
+    "addname": "Enter name.....",
+    "placeholdermessage": "Enter message...",
+    "placeholdermail": "Enter Mail....."
+  },
+  "imprint": {
+    "imprint": "Imprint"
+  },
+  "responsmenu": {
+    "aboutme": "About me",
+    "skill": "Skills",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "imprint": "imprint"
+  },
+  "policy": {
+    "policy": "Privacy-Policy",
+    "subheader": "We attach great importance to protecting your personal data. This privacy policy tells you how we collect, store and use your data.",
+    "introductionheader": "Introduction",
+    "subintro": "We collect data such as name, email address and telephone number.",
+    "introductiontext1": "Data recorded: This data is used to offer and improve our services.",
+    "introductiontext2": "Intended use: Your data will be treated confidentially and will never be passed on without your consent.",
+    "introductiontext3": "Protective measures: We use modern security measures to protect your data from unauthorized access.",
+    "datarecordheader": "What data is recorded?",
+    "datasub": "Users have the right to view, change or delete their data.",
+    "data1": "You can request a copy of your stored data at any time. All data is stored in accordance with the applicable data protection laws. We offer full transparency about the use of your data.",
+    "data2": "All data is stored in accordance with the applicable data protection laws.",
+    "data3": "We offer full transparency about the use of your data.",
+    "datausedhead": "How is the data used?",
+    "datausedsub": "You can request changes or deletion of your data via our contact information.",
+    "dataused1": "Our data protection measures meet the highest standards.",
+    "dataused2": "You have the right to lodge a complaint with the data protection authorities.",
+    "dataused3": "All inquiries regarding data protection matters will be processed within 30 days.",
+    "datasafetyheader": "How is the data protected?",
+    "datasafetysub": "Our data protection measures are regularly reviewed and updated.",
+    "rightshead": "Rights of the users",
+    "rightssub": "We reserve the right to change this policy at any time.",
+    "rights1": "Rights of users: For further information, please contact us by e-mail.",
+    "rights2": "Right of appeal: You can also contact us by post or telephone.",
+    "rights3": "Access rights: Our full contact information can be found below.",
+    "rights4": "Data deletion:All changes will be published on this page.",
+    "rightsend": "Thank you for your trust.",
+    "directivehead": "Amendments to the directive",
+    "directive": "This privacy policy comes into force on 15.12.2024.",
+    "contactinfohead": "Contact information",
+    "contactssub": "If you have any questions about this policy, please contact us.",
+    "contact1": "Contact:",
+    "contact2": "Address: Paul-Schreier-Straße 26, 16761 Hennigsdorf",
+    "contact3": "Phone:",
+    "remarksheader": "Concluding remarks",
+    "remarks": "I hope that this privacy policy answers all your questions.",
+    "rigtsreserved": "© 2024 Manuel Mannhold. All rights reserved."
+  },
+  "footer": {
+    "imprint": "Imprint"
+  },
+  "topic": {
+    "back": "Go back"
+  }
+}
