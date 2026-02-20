@@ -1,0 +1,104 @@
+.about-me-expanded {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 60px 40px;
+
+    .expanded-header {
+        .blue-tag {
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-top: 8px;
+        }
+    }
+
+    .content-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        gap: 48px;
+        align-items: start;
+
+        .main-story {
+            p {
+                font-size: 1.1rem;
+                line-height: 1.8;
+                color: var(--text-secondary);
+
+                .light-mode & {
+                    color: #4a5568;
+                }
+            }
+        }
+
+        .highlight-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+
+            .info-card {
+                background: var(--bg-primary);
+                border: 1px solid var(--border-color);
+                border-radius: 28px;
+                padding: 24px;
+                display: flex;
+                gap: 20px;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    border-color: var(--accent-blue);
+                    transform: translateY(-4px);
+                    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+                }
+
+                .icon-box {
+                    width: 54px;
+                    height: 54px;
+                    background: rgba(0, 123, 255, 0.1);
+                    border-radius: 16px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-shrink: 0;
+
+                    img {
+                        width: 28px;
+                        height: 28px;
+                    }
+                }
+
+                .text-box {
+                    h4 {
+                        color: var(--accent-blue);
+                        margin: 0 0 4px 0;
+                        font-size: 1.1rem;
+                        font-weight: 700;
+                    }
+
+                    p {
+                        margin: 0;
+                        font-size: 0.95rem;
+                        line-height: 1.5;
+                        color: var(--text-secondary);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .about-me-expanded .content-grid {
+        grid-template-columns: 1fr;
+    }
+}

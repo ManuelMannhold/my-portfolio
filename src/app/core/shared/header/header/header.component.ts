@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, HostListener, inject, Renderer2 } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, inject, Input, Output, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MatIconModule } from '@angular/material/icon';
@@ -11,6 +11,8 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  @Input() isDetailView: boolean = false;
+  @Output() backToGrid = new EventEmitter<void>();
   isDarkMode: boolean = true;
   currentLanguage: string = 'de';
   private translateService = inject(TranslateService);
@@ -25,6 +27,10 @@ export class HeaderComponent {
       this.english = savedLanguage === 'en';
       this.translateService.use(this.currentLanguage);
     }
+  }
+
+  onBackClick() {
+    this.backToGrid.emit();
   }
 
   toTop(): void {
@@ -47,28 +53,22 @@ export class HeaderComponent {
 
   toggleTheme() {
     this.isDarkMode = !this.isDarkMode;
-    localStorage.setItem('theme', this.isDarkMode ? 'dark' : 'light'); // Speichern
+    localStorage.setItem('theme', this.isDarkMode ? 'dark' : 'light');
     this.startWipeAnimation();
   }
 
   private startWipeAnimation() {
-    // 1. Erstelle das Overlay-Element
     const wipeDiv = this.renderer.createElement('div');
     this.renderer.addClass(wipeDiv, 'theme-wipe-overlay');
     this.renderer.appendChild(document.body, wipeDiv);
 
-    // 2. Trigger die Animation nach einem winzigen Moment
     setTimeout(() => {
       this.renderer.addClass(wipeDiv, 'active');
     }, 10);
-
-    // 3. In der Mitte der Animation (nach ca. 350ms) wechseln wir das Theme
     setTimeout(() => {
       this.applyTheme(this.isDarkMode);
       localStorage.setItem('theme', this.isDarkMode ? 'dark' : 'light');
     }, 350);
-
-    // 4. Wenn die Animation fertig ist, entfernen wir das Element
     setTimeout(() => {
       this.renderer.removeChild(document.body, wipeDiv);
     }, 800);
@@ -84,7 +84,7 @@ export class HeaderComponent {
 
   changeLanguage(lang: string) {
     this.currentLanguage = lang;
-    this.translateService.use(lang); // Deine ngx-translate Logik
+    this.translateService.use(lang);
   }
 
   /**

@@ -3,6 +3,14 @@
     <span class="header-name-language">
       <span class="header-name">MM</span>
     </span>
+    <div class="nav-actions">
+      @if (isDetailView) {
+      <button class="back-button" (click)="onBackClick()">
+        <mat-icon>arrow_back</mat-icon>
+        <span>Zurück</span>
+      </button>
+      }
+    </div>
     <div class="language-switch">
       <button (click)="changeLanguage('de')" [class.active]="currentLanguage === 'de'" class="lang-btn">
         DE

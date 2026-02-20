@@ -1,25 +1,70 @@
 <app-custom-cursor #cursor></app-custom-cursor>
-<app-header></app-header>
+
+@if (expandedTile) {
+<div class="modal-overlay" (click)="expandedTile = null"></div>
+}
+
+<app-header [isDetailView]="!!expandedTile" (backToGrid)="expandedTile = null"></app-header> @if (expandedTile) {
+<div class="modal-overlay" (click)="expandedTile = null"></div>
+}
+
 <app-landing-page></app-landing-page>
 
 <main class="bento-container">
-    <section class="tile about-tile" (mouseenter)="cursor.setHoverState(true, 'Story')"
-      (mouseleave)="cursor.setHoverState(false)">
+
+  <section class="tile about-tile" [@expandAnimation]="expandedTile === 'about' ? 'expanded' : 'collapsed'"
+    (click)="toggleTile('about')" (mouseenter)="cursor.setHoverState(true, 'About Me')" (mouseleave)="cursor.setHoverState(false)">
+
+    @if (expandedTile !== 'about') {
+    <div class="preview-mode">
+      <div class="tile-header">
+        <h3>About Me</h3>
+      </div>
+      <div class="preview-content">
+        <p>Frontend Entwickler aus Leidenschaft...</p>
+      </div>
+    </div>
+    } @else {
+    <div class="full-content" (click)="$event.stopPropagation()">
       <app-about></app-about>
-    </section>
+    </div>
+    }
+  </section>
 
-    <section class="tile stack-tile" (mouseenter)="cursor.setHoverState(true, 'Skills')"
-      (mouseleave)="cursor.setHoverState(false)">
+  <section class="tile stack-tile" [@expandAnimation]="expandedTile === 'stack' ? 'expanded' : 'collapsed'"
+    (click)="toggleTile('stack')" (mouseenter)="cursor.setHoverState(true, 'Skills')"
+    (mouseleave)="cursor.setHoverState(false)">
+
+    <div class="tile-header">
+      <h3>Skills</h3>
+    </div>
+
+    @if (expandedTile === 'stack') {
+    <div class="full-content" (click)="$event.stopPropagation()">
       <app-tech-stack></app-tech-stack>
-    </section>
+      <button class="close-btn" (click)="$event.stopPropagation(); expandedTile = null">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+    }
+  </section>
 
-    <section class="tile projects-tile" (mouseenter)="cursor.setHoverState(true, 'Work')"
-      (mouseleave)="cursor.setHoverState(false)">
+  <section class="tile projects-tile" [@expandAnimation]="expandedTile === 'projects' ? 'expanded' : 'collapsed'"
+    (click)="toggleTile('projects')" (mouseenter)="cursor.setHoverState(true, 'Projects')"
+    (mouseleave)="cursor.setHoverState(false)">
+
+    <div class="tile-header">
+      <h3>Projects</h3>
+    </div>
+
+    @if (expandedTile === 'projects') {
+    <div class="full-content" (click)="$event.stopPropagation()">
       <app-projects></app-projects>
-    </section>
+      <button class="close-btn" (click)="$event.stopPropagation(); expandedTile = null">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+    }
+  </section>
 
-    <section class="tile contact-tile" (mouseenter)="cursor.setHoverState(true, 'Contact')"
-      (mouseleave)="cursor.setHoverState(false)">
-      <app-contact></app-contact>
-    </section>
 </main>
