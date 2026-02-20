@@ -3,12 +3,6 @@
 <app-landing-page></app-landing-page>
 
 <main class="bento-container">
-  <div class="bento-grid">
-
-    <section class="tile landing-tile" (mouseenter)="cursor.setHoverState(true, 'Hi!')"
-      (mouseleave)="cursor.setHoverState(false)">
-    </section>
-
     <section class="tile about-tile" (mouseenter)="cursor.setHoverState(true, 'Story')"
       (mouseleave)="cursor.setHoverState(false)">
       <app-about></app-about>
@@ -28,5 +22,4 @@
       (mouseleave)="cursor.setHoverState(false)">
       <app-contact></app-contact>
     </section>
-  </div>
 </main>

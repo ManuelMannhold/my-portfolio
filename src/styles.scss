@@ -1,14 +1,51 @@
-/* src/styles.scss */
+// Custom Theming for Angular Material
+// For more information: https://material.angular.dev/guide/theming
+@use '@angular/material' as mat;
 
-// --- Farbpalette aus dem Design ---
+html {
+  @include mat.theme((color: (theme-type: light,
+        primary: mat.$azure-palette,
+        tertiary: mat.$blue-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    ));
+}
+
 :root {
-  --bg-app: #121212;          // Sehr dunkler Hintergrund für die gesamte App
-  --bg-card: #121212;         // Dunkelgrau für die Kacheln
-  --bg-card-hover: #1a1a1a;   // Etwas helleres Grau beim Hover
-  --primary-blue: #007bff;    // Das leuchtende Blau für Buttons und Akzente
-  --text-primary: #ffffff;    // Weißer Text für Überschriften
-  --text-secondary: #a0a0a0;  // Hellgrauer Text für Beschreibungen
+  --bg-app: #121212; // Sehr dunkler Hintergrund für die gesamte App
+  --bg-card: #121212; // Dunkelgrau für die Kacheln
+  --bg-card-hover: #1a1a1a; // Etwas helleres Grau beim Hover
+  --primary-blue: #007bff; // Das leuchtende Blau für Buttons und Akzente
+  --text-primary: #ffffff; // Weißer Text für Überschriften
+  --text-secondary: #a0a0a0; // Hellgrauer Text für Beschreibungen
   --border-color: rgba(255, 255, 255, 0.05); // Sehr dezenter Rahmen
+  --bg-primary: #0d1117; // Dunkler Hintergrund
+  --bg-secondary: #161b22; // Etwas hellere Hintergründe (Kacheln)
+  --text-primary: #ffffff; // Heller Text
+  --text-secondary: #a0a0a0; // Dezenter Text
+  --accent-blue: #007bff; // Dein Haupt-Blau
+  --border-color: rgba(255, 255, 255, 0.08); // Dezente Rahmen
+  --header-bg: rgba(0, 123, 255, 0.03);
+  --header-border: rgba(0, 123, 255, 0.2);
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  --box-shadow-blue: rgba(0, 123, 255, 0.3);
+  --tile-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+body.light-mode {
+  --bg-primary: #eff1f3;
+  --bg-secondary: #ffffff;
+  --text-primary: #1a1c1e;
+  --text-secondary: #5e6368;
+  --accent-blue: #005bc5;
+  --border-color: #dadddf;
+  --header-bg: rgba(255, 255, 255, 0.7);
+  --header-border: #d1d1d1; // Etwas definierter für die Nav
+  --shadow-color: rgba(0, 0, 0, 0.15);
+  --box-shadow-blue: rgba(0, 91, 197, 0.15);
+  --tile-shadow: 0 10px 40px rgba(0, 0, 0, 0.04),
+    0 2px 10px rgba(0, 0, 0, 0.02);
 }
 
 // --- Globale Resets & Typografie ---
@@ -20,10 +57,55 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: var(--bg-app);
+  background-color: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 500ms ease, color 500ms ease; // Sanfter Wechsel
+}
+
+.nav-wrapper {
+  background: var(--header-bg);
+  border: 1px solid var(--header-border);
+}
+
+.header-name {
+  background: linear-gradient(45deg, var(--text-primary), var(--accent-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navigation-links a {
+  color: var(--text-secondary);
+
+  &:hover {
+    color: var(--accent-blue);
+  }
+
+  &::after {
+    background: var(--accent-blue);
+  }
+}
+
+.bento-grid .tile {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+
+  &:hover {
+    background: var(--accent-blue); // Blauer Schimmer beim Hover
+    border-color: var(--accent-blue);
+    box-shadow: 0 20px 40px var(--shadow-color), 0 0 20px var(--box-shadow-blue);
+  }
+}
+
+.btn-primary {
+  background-color: var(--accent-blue);
+  color: var(--text-primary);
+  box-shadow: 0 4px 15px var(--box-shadow-blue);
+
+  &:hover {
+    box-shadow: 0 0 25px var(--box-shadow-blue);
+  }
 }
 
 button {
@@ -47,7 +129,68 @@ button {
   }
 }
 
-h1, h2, h3 {
+.cursor-dot {
+  background-color: var(--accent-blue);
+}
+
+.language-switch .selection-slider {
+  background: var(--accent-blue);
+}
+
+.language-switch button.active {
+  background-color: var(--accent-blue);
+}
+
+h1,
+h2,
+h3 {
   font-weight: 700;
   letter-spacing: -0.02em;
+}
+
+.theme-wipe-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--accent-blue);
+  z-index: 99999;
+  transform: translateX(-100%);
+  transition: transform 700ms cubic-bezier(0.86, 0, 0.07, 1);
+  pointer-events: none;
+}
+
+.theme-wipe-animation.active {
+  transform: translateX(0%);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+.theme-wipe-overlay {
+  position: fixed;
+  top: 0;
+  left: -110vw;
+  width: 110vw;
+  height: 100vh;
+  background: linear-gradient(90deg,
+      #121212 0%,
+      #0056b3 100%);
+  z-index: 999999;
+  pointer-events: none;
+  transition: transform 800ms cubic-bezier(0.7, 0, 0.3, 1);
+  box-shadow: 20px 0 60px rgba(0, 0, 0, 0.3);
+}
+
+.theme-wipe-overlay.active {
+  transform: translateX(220vw);
 }
