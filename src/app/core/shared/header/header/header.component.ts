@@ -9,7 +9,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-   currentLanguage: string = 'en';
+  currentLanguage: string = 'en';
   private translateService = inject(TranslateService);
   english: boolean = true;
   showGoBack = false;
@@ -23,16 +23,11 @@ export class HeaderComponent {
     }
   }
 
-  @HostListener('window:scroll', [])
-onScroll(): void {
-  this.showGoBack = window.scrollY > 200;
-}
-
-toTop(): void {
-  this.router.navigateByUrl('/').then(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-}
+  toTop(): void {
+    this.router.navigateByUrl('/').then(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
   /**
    * Lifecycle hook that is called after Angular has initialized the component.
