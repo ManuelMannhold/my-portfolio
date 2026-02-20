@@ -9,7 +9,7 @@ export const appConfig: ApplicationConfig = {
     provideTranslateService({
       defaultLanguage: 'de',
       loader: provideTranslateHttpLoader({
-        prefix: './assets/i18n/',
+        prefix: '/i18n/',
         suffix: '.json'
       })
     })

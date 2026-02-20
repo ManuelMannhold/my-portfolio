@@ -9,7 +9,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  currentLanguage: string = 'en';
+  currentLanguage: string = 'de';
   private translateService = inject(TranslateService);
   english: boolean = true;
   showGoBack = false;
@@ -39,18 +39,10 @@ export class HeaderComponent {
   }
 
 
-  /**
-   * Sets the application language to the specified language code.
-   * Updates the translation service and stores the language preference in localStorage.
-   *
-   * @param {string} languageCode - The language code to set (e.g., 'de' for German, 'en' for English).
-   */
-  changeLanguage(languageCode: string) {
-    this.currentLanguage = languageCode;
-    this.translateService.use(this.currentLanguage);
-    localStorage.setItem('language', this.currentLanguage);
-    this.setActiveColorForLanguage();
-  }
+ changeLanguage(lang: string) {
+  this.currentLanguage = lang;
+  this.translateService.use(lang); // Deine ngx-translate Logik
+}
 
   /**
    * Sets the active CSS class for the currently selected language.
@@ -66,24 +58,17 @@ export class HeaderComponent {
     }
   }
 
-  /**
-   * Sets the application language to English.
-   * Updates the translation service to use English ('en') and stores the preference in localStorage.
-   */
-  openResponsiveMenu() {
-    let openMenu: HTMLElement | null =
-      document.getElementById('responsive-menu');
-    if (openMenu) openMenu.style.transform = 'translate(0)';
-  }
+isMenuOpen = false;
 
-  /**
-   * Closes the responsive menu by modifying its transform style.
-   * Finds the element with the ID 'responsive-menu' and sets its transform property to move it out of view.
-   */
-  closeResponsiveMenu() {
-    let responsMenu = document.getElementById('responsive-menu');
-    if (responsMenu) responsMenu.style.transform = 'translate(10000px)';
-  }
+openResponsiveMenu() {
+  const menu = document.getElementById('responsive-menu');
+  menu?.classList.add('open');
+}
+
+closeResponsiveMenu() {
+  const menu = document.getElementById('responsive-menu');
+  menu?.classList.remove('open');
+}
 
 
 }

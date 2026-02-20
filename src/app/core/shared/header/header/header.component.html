@@ -1,39 +1,34 @@
 <nav>
   <div class="nav-wrapper">
-  <span class="header-name-language">
-  <img src="src/assets/img/manuel_logo_white_and_orange.png" alt="" />
-  </span>
-  <span class="change-language"
-    ><span (click)="changeLanguage('de')" class="change-language" id="german"
-      >DE</span
-    >
-    <span class="seperator">|</span>
-    <span (click)="changeLanguage('en')" class="change-language" id="english"
-      >EN</span
-    ></span
-  >
-  <div class="navigation-links">
-    <span class="links">
-      <a href="#about-me-anchor">{{ "header.aboutMe" | translate }}</a>
-      <a href="#my-skill-anchor">{{ "header.skill" | translate }}</a>
-      <a href="#portfolio-anchor">{{ "header.project" | translate }}</a>
+    <span class="header-name-language">
+      <span class="header-name">MM</span>
     </span>
-  </div>
-  <div
-    id="responsive-menu-button"
-    class="d-none"
-    (click)="openResponsiveMenu()"
-  >
-    <img src="../../assets/img/responsive_menu.png" alt="" />
-  </div>
-  <div id="responsive-menu">
-    <div id="close-responsive" (click)="closeResponsiveMenu()">X</div>
-    <a href="#about-me-anchor">{{ "responsmenu.aboutme" | translate }}</a>
-    <a href="#my-skill-anchor">{{ "responsmenu.skill" | translate }}</a>
-    <a href="#portfolio-anchor">{{ "responsmenu.portfolio" | translate }}</a>
-    <a href="#contact-anchor">{{ "responsmenu.contact" | translate }}</a>
-    <a href="imprint">{{ "responsmenu.imprint" | translate }}</a>
-    <a href="privacy-policy">{{ "policy.policy" | translate }}</a>
-  </div>
+    <div class="language-switch">
+      <button (click)="changeLanguage('de')" [class.active]="currentLanguage === 'de'" class="lang-btn">
+        DE
+      </button>
+      <button (click)="changeLanguage('en')" [class.active]="currentLanguage === 'en'" class="lang-btn">
+        EN
+      </button>
+    </div>
+    <div class="navigation-links">
+      <span class="links">
+        <a href="#about-me-anchor">{{ "header.aboutMe" | translate }}</a>
+        <a href="#my-skill-anchor">{{ "header.skill" | translate }}</a>
+        <a href="#portfolio-anchor">{{ "header.project" | translate }}</a>
+      </span>
+    </div>
+    <div id="responsive-menu-button" class="d-none" (click)="openResponsiveMenu()">
+      <img src="../../assets/img/responsive_menu.png" alt="" />
+    </div>
+    <div id="responsive-menu">
+      <div id="close-responsive" (click)="closeResponsiveMenu()">X</div>
+      <a href="#about-me-anchor">{{ "responsmenu.aboutme" | translate }}</a>
+      <a href="#my-skill-anchor">{{ "responsmenu.skill" | translate }}</a>
+      <a href="#portfolio-anchor">{{ "responsmenu.portfolio" | translate }}</a>
+      <a href="#contact-anchor">{{ "responsmenu.contact" | translate }}</a>
+      <a href="imprint">{{ "responsmenu.imprint" | translate }}</a>
+      <a href="privacy-policy">{{ "policy.policy" | translate }}</a>
+    </div>
   </div>
 </nav>

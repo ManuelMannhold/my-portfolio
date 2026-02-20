@@ -2,7 +2,7 @@
 
 // --- Farbpalette aus dem Design ---
 :root {
-  --bg-app: #0a0a0a;          // Sehr dunkler Hintergrund für die gesamte App
+  --bg-app: #121212;          // Sehr dunkler Hintergrund für die gesamte App
   --bg-card: #121212;         // Dunkelgrau für die Kacheln
   --bg-card-hover: #1a1a1a;   // Etwas helleres Grau beim Hover
   --primary-blue: #007bff;    // Das leuchtende Blau für Buttons und Akzente
@@ -26,14 +26,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-// --- Globale Button Styles ---
 button {
   cursor: pointer;
   border: none;
   font-family: inherit;
   transition: all 0.3s ease;
 
-  // Blauer Hauptbutton (z.B. "Download CV")
   &.btn-primary {
     background-color: var(--primary-blue);
     color: white;

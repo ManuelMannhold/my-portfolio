@@ -1,18 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-custom-cursor',
-  imports: [],
-  templateUrl: './custom-cursor.html',
-  styleUrl: './custom-cursor.scss',
+  standalone: true,
+  imports: [CommonModule],
+  template: `
+    <div class="cursor-wrapper" [class.hovering]="isHovering" [style.left.px]="x" [style.top.px]="y">
+      <div class="cursor-dot"></div>
+      <div class="cursor-text" *ngIf="isHovering">{{ hoverText }}</div>
+    </div>
+  `,
+  styleUrls: ['./custom-cursor.scss']
 })
-export class CustomCursor {
-  isActive = false;
-  cursorText = '';
+export class CustomCursorComponent {
+  x = 0;
+  y = 0;
+  hoverText = '';
+  isHovering = false;
 
-  // Diese Funktion wird von außen aufgerufen
+  @HostListener('window:mousemove', ['$event'])
+  onMouseMove(event: MouseEvent) {
+    this.x = event.clientX;
+    this.y = event.clientY;
+  }
+
   setHoverState(active: boolean, text: string = '') {
-    this.isActive = active;
-    this.cursorText = text;
+    this.isHovering = active;
+    this.hoverText = text;
   }
 }

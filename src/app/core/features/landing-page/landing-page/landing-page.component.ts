@@ -11,4 +11,14 @@ import { TranslateService, TranslateModule } from '@ngx-translate/core';
 export class LandingPageComponent {
   private translate = inject(TranslateService);
 
+  scrollToContact() {
+  const contactElement = document.getElementById('contact-anchor');
+  if (contactElement) {
+    contactElement.scrollIntoView({ 
+      behavior: 'smooth', 
+      block: 'start' 
+    });
+  }
+}
+
 }
