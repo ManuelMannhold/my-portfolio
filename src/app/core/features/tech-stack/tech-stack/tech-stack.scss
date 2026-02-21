@@ -1,0 +1,110 @@
+.tech-wrapper {
+    padding: 40px;
+    color: white;
+
+    .tech-header {
+        margin-bottom: 40px;
+
+        .blue-tag {
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+    }
+}
+
+/* 1. Die Kategorien (Frontend / Backend) nebeneinander */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.tech-category {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 24px;
+    backdrop-filter: blur(10px);
+
+    h3 {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 24px;
+        font-size: 1.2rem;
+        color: var(--accent-blue);
+
+        mat-icon {
+            font-size: 1.5rem;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+}
+
+/* 2. Die Badges fließen lassen (Bento-Style) */
+.badges {
+    display: flex;
+    flex-wrap: wrap; // Wichtig: Damit sie nebeneinander stehen und umbrechen
+    gap: 12px;
+}
+
+.tech-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(var(--accent-blue-rgb), 0.1);
+    border: 1px solid rgba(var(--accent-blue-rgb), 0.2);
+    padding: 12px 18px;
+    border-radius: 16px;
+    font-size: 0.95rem;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    animation: badgePop 3.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+    cursor: default;
+    opacity: 0;
+
+    mat-icon {
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--accent-blue);
+    }
+
+    &:hover {
+        background: rgba(var(--accent-blue-rgb), 0.25);
+        border-color: var(--accent-blue);
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    @for $i from 1 through 15 {
+        &:nth-child(#{$i}) {
+            animation-delay: #{$i * 0.05}s;
+        }
+    }
+}
+
+@keyframes badgePop {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}

@@ -1,1 +1,46 @@
-<p>tech-stack works!</p>
+<div class="tech-wrapper">
+    <div class="tech-full-content" (click)="$event.stopPropagation()">
+        <header class="tech-header">
+            <span class="blue-tag">Expertise</span>
+            <h2>Skills & Tools</h2>
+        </header>
+
+        <div class="tech-grid">
+            <section class="tech-category">
+                <h3><mat-icon>html</mat-icon> Frontend</h3>
+                <div class="badges">
+                    <div class="tech-badge"><mat-icon>javascript</mat-icon> JavaScript</div>
+                    <div class="tech-badge"><mat-icon>integration_instructions</mat-icon> TypeScript</div>
+                    <div class="tech-badge"><mat-icon>change_history</mat-icon> Angular</div>
+                    <div class="tech-badge"><mat-icon>css</mat-icon> SCSS / CSS</div>
+                </div>
+            </section>
+
+            <section class="tech-category">
+                <h3><mat-icon>settings_ethernet</mat-icon> Backend & Tools</h3>
+                <div class="badges">
+                    <div class="tech-badge">
+                        <mat-icon>local_fire_department</mat-icon>
+                        <span>Firebase</span>
+                    </div>
+                    <div class="tech-badge">
+                        <mat-icon>account_tree</mat-icon>
+                        <span>Git / GitHub</span>
+                    </div>
+                    <div class="tech-badge">
+                        <mat-icon>api</mat-icon>
+                        <span>REST APIs</span>
+                    </div>
+                    <div class="tech-badge">
+                        <mat-icon>view_kanban</mat-icon>
+                        <span>Scrum</span>
+                    </div>
+                    <div class="tech-badge">
+                        <mat-icon>layers</mat-icon>
+                        <span>Angular Material</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
