@@ -82,11 +82,12 @@
     (click)="toggleTile('legal')" (mouseenter)="cursor.setHoverState(true, 'Legal Notice')"
     (mouseleave)="cursor.setHoverState(false)">
 
-    <div class="tile-header">
-      <h3>Legal Notice</h3>
+    @if (expandedTile !== 'legal') {
+    <div class="preview-mode">
+      <mat-icon>gavel</mat-icon>
+      <span>Rechtliches</span>
     </div>
-
-    @if (expandedTile === 'legal') {
+    } @else {
     <div class="full-content" (click)="$event.stopPropagation()">
       <app-legal></app-legal>
     </div>

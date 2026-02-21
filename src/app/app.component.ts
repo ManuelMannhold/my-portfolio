@@ -9,6 +9,7 @@ import { LandingPageComponent } from "./core/features/landing-page/landing-page/
 import { HeaderComponent } from './core/shared/header/header/header.component';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { LegalComponent } from './core/features/legal/legal.component';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +23,8 @@ import { LegalComponent } from './core/features/legal/legal.component';
     TranslateModule,
     LandingPageComponent,
     HeaderComponent,
-    LegalComponent
+    LegalComponent,
+    MatIcon
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
