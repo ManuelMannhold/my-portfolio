@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { About } from './core/features/about/about/about';
 import { Contact } from './core/features/contact/contact/contact';
 import { TechStack } from './core/features/tech-stack/tech-stack/tech-stack';
@@ -9,13 +8,12 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { LandingPageComponent } from "./core/features/landing-page/landing-page/landing-page.component";
 import { HeaderComponent } from './core/shared/header/header/header.component';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { MatIcon } from '@angular/material/icon';
+import { LegalComponent } from './core/features/legal/legal.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet,
     About,
     Contact,
     TechStack,
@@ -24,7 +22,7 @@ import { MatIcon } from '@angular/material/icon';
     TranslateModule,
     LandingPageComponent,
     HeaderComponent,
-    MatIcon
+    LegalComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -35,7 +33,7 @@ import { MatIcon } from '@angular/material/icon';
       zIndex: 1
     })),
     state('expanded', style({
-      position: 'fixed', // Wir setzen es, aber animieren es nicht
+      position: 'fixed',
       top: '0',
       left: '0',
       width: '100%',
@@ -46,10 +44,11 @@ import { MatIcon } from '@angular/material/icon';
       borderRadius: '0',
       display: 'flex',
       justifyContent: 'center',
-      alignItems: 'center'
+      alignItems: 'center',
+      flexWrap: 'wrap'
     })),
     transition('collapsed => expanded', [
-      style({ zIndex: 9999 }), // Sofort nach oben holen
+      style({ zIndex: 9999 }),
       animate('400ms cubic-bezier(0.4, 0, 0.2, 1)')
     ]),
     transition('expanded => collapsed', [

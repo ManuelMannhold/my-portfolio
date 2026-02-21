@@ -115,5 +115,14 @@
   },
   "topic": {
     "back": "Zurück"
+  },
+  "legal-notice": {
+    "legalnotice": "Rechtlicher Hinweis",
+    "subheader": "Angaben gemäß § 5 TMG",
+    "name": "Manuel Mannhold",
+    "address": "Paul-Schreier-Straße 26, 16761 Hennigsdorf",
+    "contact": "Kontakt:",
+    "email": "Email:",
+    "phone": "Telefon:"
   }
 }

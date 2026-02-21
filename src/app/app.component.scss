@@ -25,6 +25,8 @@
       transform: translateY(-8px);
       border-color: var(--accent-blue);
       box-shadow: 0 20px 40px var(--box-shadow-blue);
+      animation-play-state: paused;
+      cursor: pointer;
     }
   }
 
@@ -155,6 +157,31 @@
     color: white;
     transform: scale(1.1) rotate(90deg);
   }
+}
+
+.legal-tile {
+  grid-column: span 1;
+  grid-row: span 1;
+  background: rgba(var(--accent-blue-rgb), 0.03);
+  
+  .mini-legal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 100%;
+    font-size: 0.8rem;
+    opacity: 0.6;
+    &:hover { opacity: 1; }
+  }
+}
+
+.legal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 40px;
+  text-align: left;
 }
 
 .full-content {

@@ -115,5 +115,13 @@
   },
   "topic": {
     "back": "Go back"
+  },
+  "legal-notice": {
+    "title": "Imprint & Privacy Policy",
+    "privacy": "Privacy Policy",
+    "legalnotice": "Legal notice",
+    "subheader": "Information according to § 5 TMG",
+    "contact": "Contact:",
+    "phone": "Phone:"
   }
 }

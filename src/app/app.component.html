@@ -13,7 +13,8 @@
 <main class="bento-container">
 
   <section class="tile about-tile" [@expandAnimation]="expandedTile === 'about' ? 'expanded' : 'collapsed'"
-    (click)="toggleTile('about')" (mouseenter)="cursor.setHoverState(true, 'About Me')" (mouseleave)="cursor.setHoverState(false)">
+    (click)="toggleTile('about')" (mouseenter)="cursor.setHoverState(true, 'About Me')"
+    (mouseleave)="cursor.setHoverState(false)">
 
     @if (expandedTile !== 'about') {
     <div class="preview-mode">
@@ -42,9 +43,6 @@
     @if (expandedTile === 'stack') {
     <div class="full-content" (click)="$event.stopPropagation()">
       <app-tech-stack></app-tech-stack>
-      <button class="close-btn" (click)="$event.stopPropagation(); expandedTile = null">
-        <mat-icon>close</mat-icon>
-      </button>
     </div>
     }
   </section>
@@ -60,9 +58,6 @@
     @if (expandedTile === 'projects') {
     <div class="full-content" (click)="$event.stopPropagation()">
       <app-projects></app-projects>
-      <button class="close-btn" (click)="$event.stopPropagation(); expandedTile = null">
-        <mat-icon>close</mat-icon>
-      </button>
     </div>
     }
   </section>
@@ -78,9 +73,22 @@
     @if (expandedTile === 'contact') {
     <div class="full-content" (click)="$event.stopPropagation()">
       <app-contact></app-contact>
-      <button class="close-btn" (click)="$event.stopPropagation(); expandedTile = null">
-        <mat-icon>close</mat-icon>
-      </button>
+    </div>
+    }
+  </section>
+
+
+  <section class="tile legal-tile" [@expandAnimation]="expandedTile === 'legal' ? 'expanded' : 'collapsed'"
+    (click)="toggleTile('legal')" (mouseenter)="cursor.setHoverState(true, 'Legal Notice')"
+    (mouseleave)="cursor.setHoverState(false)">
+
+    <div class="tile-header">
+      <h3>Legal Notice</h3>
+    </div>
+
+    @if (expandedTile === 'legal') {
+    <div class="full-content" (click)="$event.stopPropagation()">
+      <app-legal></app-legal>
     </div>
     }
   </section>
