@@ -67,4 +67,22 @@
     }
   </section>
 
+  <section class="tile contact-tile" [@expandAnimation]="expandedTile === 'contact' ? 'expanded' : 'collapsed'"
+    (click)="toggleTile('contact')" (mouseenter)="cursor.setHoverState(true, 'Contact')"
+    (mouseleave)="cursor.setHoverState(false)">
+
+    <div class="tile-header">
+      <h3>Contact</h3>
+    </div>
+
+    @if (expandedTile === 'contact') {
+    <div class="full-content" (click)="$event.stopPropagation()">
+      <app-contact></app-contact>
+      <button class="close-btn" (click)="$event.stopPropagation(); expandedTile = null">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+    }
+  </section>
+
 </main>
