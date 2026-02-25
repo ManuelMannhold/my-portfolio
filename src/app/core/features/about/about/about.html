@@ -1,8 +1,18 @@
-<div class="about-me-expanded">
-  <header class="expanded-header">
-    <span class="blue-tag">{{ "aboutme.aboutme" | translate }}</span>
-    <h2>Mein Weg als Entwickler</h2>
+<div class="about-wrapper" [class.is-modal]="isModal" (click)="!isModal && openModal()">
+  @if (isModal) {
+  <header class="about-header">
+    <div class="header-main">
+      <span class="blue-tag">
+        {{ "aboutme.aboutme" | translate }}
+      </span>
+      <h2>Mein Weg als Entwickler</h2>
+    </div>
+
+    <button mat-icon-button class="close-btn" (click)="close()">
+      <mat-icon>close</mat-icon>
+    </button>
   </header>
+  }
 
   <div class="content-grid">
     <div class="main-story">
@@ -12,6 +22,7 @@
     </div>
 
     <div class="highlight-sidebar">
+
       <div class="info-card personal">
         <div class="icon-box">
           <img src="img/light-bulb-about-me.png" alt="Ideen" />
@@ -31,6 +42,7 @@
           <p>{{ "aboutme.job" | translate }}</p>
         </div>
       </div>
+
     </div>
   </div>
 </div>

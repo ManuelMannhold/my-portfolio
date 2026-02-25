@@ -1,25 +1,36 @@
 .tech-wrapper {
-    padding: 40px;
-    color: white;
-
-    .tech-header {
-        margin-bottom: 40px;
-
-        .blue-tag {
-            color: var(--accent-blue);
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            margin: 0;
-        }
+  // Styles, die IMMER gelten
+  
+  &.is-modal {
+    padding: 60px; // Großzügiger Platz im Modal
+    min-height: 100vh;
+    background: var(--bg-primary); // Dein dunkles Blau
+    
+    .tech-full-content {
+      max-width: 1200px;
+      margin: 0 auto;
     }
+  }
+
+  &:not(.is-modal) {
+    /* Styles für die kleine Kachel im Grid */
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    .tech-preview {
+      text-align: center;
+      .icon-cloud {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        margin-bottom: 10px;
+        mat-icon { color: var(--accent-blue); font-size: 32px; width: 32px; height: 32px; }
+      }
+    }
+  }
 }
 
 /* 1. Die Kategorien (Frontend / Backend) nebeneinander */

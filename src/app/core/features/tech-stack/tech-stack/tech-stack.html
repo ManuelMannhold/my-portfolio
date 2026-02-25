@@ -1,46 +1,90 @@
-<div class="tech-wrapper">
-    <div class="tech-full-content" (click)="$event.stopPropagation()">
-        <header class="tech-header">
-            <span class="blue-tag">Expertise</span>
-            <h2>Skills & Tools</h2>
-        </header>
+<div 
+  class="tech-wrapper" 
+  [class.is-modal]="isModal"
+  (click)="!isModal && openAsModal?.emit()"
+>
 
-        <div class="tech-grid">
-            <section class="tech-category">
-                <h3><mat-icon>html</mat-icon> Frontend</h3>
-                <div class="badges">
-                    <div class="tech-badge"><mat-icon>javascript</mat-icon> JavaScript</div>
-                    <div class="tech-badge"><mat-icon>integration_instructions</mat-icon> TypeScript</div>
-                    <div class="tech-badge"><mat-icon>change_history</mat-icon> Angular</div>
-                    <div class="tech-badge"><mat-icon>css</mat-icon> SCSS / CSS</div>
-                </div>
-            </section>
+  @if (isModal) {
+    <header class="tech-header">
+      <div class="header-main">
+        <span class="blue-tag">Expertise</span>
+        <h2>Skills & Tools</h2>
+      </div>
 
-            <section class="tech-category">
-                <h3><mat-icon>settings_ethernet</mat-icon> Backend & Tools</h3>
-                <div class="badges">
-                    <div class="tech-badge">
-                        <mat-icon>local_fire_department</mat-icon>
-                        <span>Firebase</span>
-                    </div>
-                    <div class="tech-badge">
-                        <mat-icon>account_tree</mat-icon>
-                        <span>Git / GitHub</span>
-                    </div>
-                    <div class="tech-badge">
-                        <mat-icon>api</mat-icon>
-                        <span>REST APIs</span>
-                    </div>
-                    <div class="tech-badge">
-                        <mat-icon>view_kanban</mat-icon>
-                        <span>Scrum</span>
-                    </div>
-                    <div class="tech-badge">
-                        <mat-icon>layers</mat-icon>
-                        <span>Angular Material</span>
-                    </div>
-                </div>
-            </section>
+      <button mat-icon-button class="close-btn" (click)="close()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </header>
+  }
+
+  <div class="tech-grid">
+
+    <!-- Frontend -->
+    <section class="tech-category">
+      <h3>
+        <mat-icon>html</mat-icon>
+        Frontend
+      </h3>
+
+      <div class="badges">
+        <div class="tech-badge">
+          <mat-icon>javascript</mat-icon>
+          <span>JavaScript</span>
         </div>
-    </div>
+
+        <div class="tech-badge">
+          <mat-icon>integration_instructions</mat-icon>
+          <span>TypeScript</span>
+        </div>
+
+        <div class="tech-badge">
+          <mat-icon>change_history</mat-icon>
+          <span>Angular</span>
+        </div>
+
+        <div class="tech-badge">
+          <mat-icon>css</mat-icon>
+          <span>SCSS / CSS</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Backend & Tools -->
+    <section class="tech-category">
+      <h3>
+        <mat-icon>settings_ethernet</mat-icon>
+        Backend & Tools
+      </h3>
+
+      <div class="badges">
+        <div class="tech-badge">
+          <mat-icon>local_fire_department</mat-icon>
+          <span>Firebase</span>
+        </div>
+
+        <div class="tech-badge">
+          <mat-icon>account_tree</mat-icon>
+          <span>Git / GitHub</span>
+        </div>
+
+        <div class="tech-badge">
+          <mat-icon>api</mat-icon>
+          <span>REST APIs</span>
+        </div>
+
+        <div class="tech-badge">
+          <mat-icon>view_kanban</mat-icon>
+          <span>Scrum</span>
+        </div>
+
+        @if (isModal) {
+          <div class="tech-badge">
+            <mat-icon>layers</mat-icon>
+            <span>Angular Material</span>
+          </div>
+        }
+      </div>
+    </section>
+
+  </div>
 </div>

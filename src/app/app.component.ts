@@ -10,6 +10,7 @@ import { HeaderComponent } from './core/shared/header/header/header.component';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { LegalComponent } from './core/features/legal/legal.component';
 import { MatIcon } from '@angular/material/icon';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-root',
@@ -24,52 +25,38 @@ import { MatIcon } from '@angular/material/icon';
     LandingPageComponent,
     HeaderComponent,
     LegalComponent,
-    MatIcon
+    MatIcon,
+    MatDialogModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  animations: [
-  trigger('expandAnimation', [
-    state('collapsed', style({
-      transform: 'scale(1)',
-      zIndex: 1
-    })),
-    state('expanded', style({
-      position: 'fixed',
-      top: '0',
-      left: '0',
-      width: '100%',
-      height: '100vh',
-      margin: '0',
-      zIndex: 9999,
-      transform: 'scale(1)',
-      borderRadius: '0',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      flexWrap: 'wrap'
-    })),
-    transition('collapsed => expanded', [
-      style({ zIndex: 9999 }),
-      animate('400ms cubic-bezier(0.4, 0, 0.2, 1)')
-    ]),
-    transition('expanded => collapsed', [
-      animate('300ms cubic-bezier(0.4, 0, 0.2, 1)')
-    ])
-  ])
-]
 })
 
 export class AppComponent {
   title = 'my-portfolio';
   private translate = inject(TranslateService);
+  private dialog = inject(MatDialog);
   expandedTile: string | null = null;
+  TechStack = TechStack;
+  About = About;
+  Contact = Contact;
+  Projects = Projects;
+  Legal = LegalComponent;
 
   constructor() {
     this.translate.setDefaultLang('de');
     this.translate.use('de');
   }
 
+  openDetail(component: any) {
+    this.dialog.open(component, {
+      width: '100vw',
+      height: '100vh',
+      maxWidth: '100vw',
+      panelClass: 'full-screen-modal',
+      data: { activated: true }
+    });
+  }
 
   toggleTile(tileId: string) {
     this.expandedTile = this.expandedTile === tileId ? null : tileId;

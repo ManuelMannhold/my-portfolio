@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
@@ -10,4 +10,5 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 })
 export class LegalComponent {
   private translateService = inject(TranslateService);
+  @Input() isModal: boolean = false;
 }

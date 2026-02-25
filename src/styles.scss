@@ -209,3 +209,17 @@ app-header {
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-color);
 }
+
+.full-screen-modal {
+  z-index: 10000 !important;
+  
+  .mat-mdc-dialog-container {
+    padding: 0;
+    background: #0a0f19; // Dein dunkles Blau
+  }
+}
+
+// Blockiert die Events im Hintergrund für den Cursor
+.cdk-overlay-backdrop-showing ~ .bento-container {
+  pointer-events: none !important;
+}

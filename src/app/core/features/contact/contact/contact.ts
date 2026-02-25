@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-contact',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './contact.scss',
 })
 export class Contact {
-
+@Input() isModal: boolean = false;
 }
