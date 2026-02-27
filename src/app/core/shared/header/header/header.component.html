@@ -5,7 +5,7 @@
     </span>
     <div class="nav-actions">
       @if (isDetailView) {
-      <button class="back-button" (click)="onBackClick()">
+      <button class="back-button" (click)="closeModal(); $event.stopPropagation()">
         <mat-icon>arrow_back</mat-icon>
         <span>Zurück</span>
       </button>

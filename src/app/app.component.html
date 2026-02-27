@@ -4,24 +4,24 @@
 <div class="modal-overlay" (click)="expandedTile = null"></div>
 }
 
-<app-header [isDetailView]="!!expandedTile" (backToGrid)="expandedTile = null"></app-header> @if (expandedTile) {
-<div class="modal-overlay" (click)="expandedTile = null"></div>
-}
+<app-header 
+  [isDetailView]="isDetailView" 
+  (backToGrid)="closeModalFromHeader()">
+</app-header>
 
 <app-landing-page></app-landing-page>
 
 <main class="bento-container">
 
-  <section class="tile stack-tile">
-    <app-about (openAsModal)="openDetail(About)" (mouseenter)="cursor.setHoverState(true, 'About Me')"
-      (mouseleave)="cursor.setHoverState(false)">>
-    </app-about>
+  <section class="tile stack-tile" (click)="openDetail(About)" (mouseenter)="cursor.setHoverState(true, 'About Me')"
+    (mouseleave)="cursor.setHoverState(false)">
+    <app-about></app-about>
+
   </section>
 
-  <section class="tile stack-tile">
-    <app-tech-stack (openAsModal)="openDetail(TechStack)" (mouseenter)="cursor.setHoverState(true, 'Skills')"
-      (mouseleave)="cursor.setHoverState(false)">>
-    </app-tech-stack>
+  <section class="tile stack-tile" (click)="openDetail(TechStack)"
+    (mouseenter)="cursor.setHoverState(true, 'Tech Stack')" (mouseleave)="cursor.setHoverState(false)">
+    <app-tech-stack></app-tech-stack>
   </section>
 
   <section class="tile stack-tile">

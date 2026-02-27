@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { About } from './core/features/about/about/about';
 import { Contact } from './core/features/contact/contact/contact';
 import { TechStack } from './core/features/tech-stack/tech-stack/tech-stack';
@@ -7,10 +7,9 @@ import { CustomCursorComponent } from './core/components/custom-cursor/custom-cu
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { LandingPageComponent } from "./core/features/landing-page/landing-page/landing-page.component";
 import { HeaderComponent } from './core/shared/header/header/header.component';
-import { trigger, state, style, transition, animate } from '@angular/animations';
 import { LegalComponent } from './core/features/legal/legal.component';
 import { MatIcon } from '@angular/material/icon';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-root',
@@ -33,10 +32,11 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 })
 
 export class AppComponent {
-  title = 'my-portfolio';
   private translate = inject(TranslateService);
   private dialog = inject(MatDialog);
+  isDetailView = false;
   expandedTile: string | null = null;
+  activeDialogRef: MatDialogRef<any> | null = null;
   TechStack = TechStack;
   About = About;
   Contact = Contact;
@@ -49,13 +49,30 @@ export class AppComponent {
   }
 
   openDetail(component: any) {
-    this.dialog.open(component, {
+    this.activeDialogRef = this.dialog.open(component, {
       width: '100vw',
       height: '100vh',
       maxWidth: '100vw',
       panelClass: 'full-screen-modal',
-      data: { activated: true }
+      data: { isExpanded: true }
     });
+    console.log('Dialog geöffnet. Ref gespeichert:', this.activeDialogRef);
+    this.isDetailView = true;
+    this.activeDialogRef.afterClosed().subscribe(() => {
+      this.isDetailView = false;
+      const triggerButton = document.querySelector('.stack-tile') as HTMLElement;
+      triggerButton?.focus();
+    });
+  }
+
+  closeModalFromHeader() {
+    console.log('Versuche Modal zu schließen. Ref:', this.activeDialogRef);
+    
+    if (this.activeDialogRef) {
+      this.activeDialogRef.close();
+      this.isDetailView = false;
+      this.activeDialogRef = null;
+    }
   }
 
   toggleTile(tileId: string) {

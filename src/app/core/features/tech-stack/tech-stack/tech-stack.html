@@ -1,8 +1,4 @@
-<div 
-  class="tech-wrapper" 
-  [class.is-modal]="isModal"
-  (click)="!isModal && openAsModal?.emit()"
->
+<div class="tech-wrapper" [class.is-modal]="isModal">
 
   @if (isModal) {
     <header class="tech-header">
@@ -10,81 +6,37 @@
         <span class="blue-tag">Expertise</span>
         <h2>Skills & Tools</h2>
       </div>
-
-      <button mat-icon-button class="close-btn" (click)="close()">
-        <mat-icon>close</mat-icon>
-      </button>
     </header>
+
+    <div class="tech-grid">
+      <section class="tech-category">
+        <h3><mat-icon>html</mat-icon> Frontend</h3>
+        <div class="badges">
+          <div class="tech-badge"><mat-icon>javascript</mat-icon> <span>JavaScript</span></div>
+          <div class="tech-badge"><mat-icon>integration_instructions</mat-icon> <span>TypeScript</span></div>
+          <div class="tech-badge"><mat-icon>change_history</mat-icon> <span>Angular</span></div>
+          <div class="tech-badge"><mat-icon>css</mat-icon> <span>SCSS / CSS</span></div>
+        </div>
+      </section>
+
+      <section class="tech-category">
+        <h3><mat-icon>settings_ethernet</mat-icon> Backend & Tools</h3>
+        <div class="badges">
+          <div class="tech-badge"><mat-icon>local_fire_department</mat-icon> <span>Firebase</span></div>
+          <div class="tech-badge"><mat-icon>account_tree</mat-icon> <span>Git</span></div>
+          <div class="tech-badge"><mat-icon>layers</mat-icon> <span>Material</span></div>
+        </div>
+      </section>
+    </div>
+  } @else {
+    <div class="tech-preview">
+      <div class="icon-cloud">
+        <mat-icon>change_history</mat-icon>
+        <mat-icon>layers</mat-icon>
+        <mat-icon>local_fire_department</mat-icon>
+      </div>
+      <p class="preview-label">Tech Stack</p>
+    </div>
   }
 
-  <div class="tech-grid">
-
-    <!-- Frontend -->
-    <section class="tech-category">
-      <h3>
-        <mat-icon>html</mat-icon>
-        Frontend
-      </h3>
-
-      <div class="badges">
-        <div class="tech-badge">
-          <mat-icon>javascript</mat-icon>
-          <span>JavaScript</span>
-        </div>
-
-        <div class="tech-badge">
-          <mat-icon>integration_instructions</mat-icon>
-          <span>TypeScript</span>
-        </div>
-
-        <div class="tech-badge">
-          <mat-icon>change_history</mat-icon>
-          <span>Angular</span>
-        </div>
-
-        <div class="tech-badge">
-          <mat-icon>css</mat-icon>
-          <span>SCSS / CSS</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Backend & Tools -->
-    <section class="tech-category">
-      <h3>
-        <mat-icon>settings_ethernet</mat-icon>
-        Backend & Tools
-      </h3>
-
-      <div class="badges">
-        <div class="tech-badge">
-          <mat-icon>local_fire_department</mat-icon>
-          <span>Firebase</span>
-        </div>
-
-        <div class="tech-badge">
-          <mat-icon>account_tree</mat-icon>
-          <span>Git / GitHub</span>
-        </div>
-
-        <div class="tech-badge">
-          <mat-icon>api</mat-icon>
-          <span>REST APIs</span>
-        </div>
-
-        <div class="tech-badge">
-          <mat-icon>view_kanban</mat-icon>
-          <span>Scrum</span>
-        </div>
-
-        @if (isModal) {
-          <div class="tech-badge">
-            <mat-icon>layers</mat-icon>
-            <span>Angular Material</span>
-          </div>
-        }
-      </div>
-    </section>
-
-  </div>
 </div>

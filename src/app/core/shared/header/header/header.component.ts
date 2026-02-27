@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, EventEmitter, HostListener, inject, Input, Output, Renderer2 } from '@angular/core';
+import { Component, ElementRef, EventEmitter, inject, Input, Output, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MatIconModule } from '@angular/material/icon';
@@ -29,7 +29,7 @@ export class HeaderComponent {
     }
   }
 
-  onBackClick() {
+  closeModal() {
     this.backToGrid.emit();
   }
 

@@ -33,9 +33,9 @@
   }
 }
 
-/* 1. Die Kategorien (Frontend / Backend) nebeneinander */
 .tech-grid {
     display: grid;
+    grid-row: auto;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
 }
@@ -63,10 +63,9 @@
     }
 }
 
-/* 2. Die Badges fließen lassen (Bento-Style) */
 .badges {
     display: flex;
-    flex-wrap: wrap; // Wichtig: Damit sie nebeneinander stehen und umbrechen
+    flex-wrap: wrap;
     gap: 12px;
 }
 
