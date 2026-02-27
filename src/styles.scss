@@ -215,11 +215,10 @@ app-header {
   
   .mat-mdc-dialog-container {
     padding: 0;
-    background: #0a0f19; // Dein dunkles Blau
+    background: #0a0f19;
   }
 }
 
-// Blockiert die Events im Hintergrund für den Cursor
 .cdk-overlay-backdrop-showing ~ .bento-container {
   pointer-events: none !important;
 }

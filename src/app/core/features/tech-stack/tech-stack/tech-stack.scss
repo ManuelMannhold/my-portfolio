@@ -1,36 +1,40 @@
 .tech-wrapper {
-  // Styles, die IMMER gelten
-  
-  &.is-modal {
-    padding: 60px; // Großzügiger Platz im Modal
-    min-height: 100vh;
-    background: var(--bg-primary); // Dein dunkles Blau
-    
-    .tech-full-content {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-  }
+    &.is-modal {
+        padding: 60px;
+        min-height: 100vh;
+        background: var(--bg-primary);
 
-  &:not(.is-modal) {
-    /* Styles für die kleine Kachel im Grid */
-    padding: 20px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    .tech-preview {
-      text-align: center;
-      .icon-cloud {
-        display: flex;
-        gap: 10px;
-        justify-content: center;
-        margin-bottom: 10px;
-        mat-icon { color: var(--accent-blue); font-size: 32px; width: 32px; height: 32px; }
-      }
+        .tech-full-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
     }
-  }
+
+    &:not(.is-modal) {
+        padding: 20px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .tech-preview {
+            text-align: center;
+
+            .icon-cloud {
+                display: flex;
+                gap: 10px;
+                justify-content: center;
+                margin-bottom: 10px;
+
+                mat-icon {
+                    color: var(--accent-blue);
+                    font-size: 32px;
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+        }
+    }
 }
 
 .tech-grid {

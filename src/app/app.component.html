@@ -24,10 +24,9 @@
     <app-tech-stack></app-tech-stack>
   </section>
 
-  <section class="tile stack-tile">
-    <app-projects (openAsModal)="openDetail(Projects)" (mouseenter)="cursor.setHoverState(true, 'Projects')"
-      (mouseleave)="cursor.setHoverState(false)">>
-    </app-projects>
+  <section class="tile stack-tile" (click)="openDetail(Projects)"
+    (mouseenter)="cursor.setHoverState(true, 'Projects')" (mouseleave)="cursor.setHoverState(false)">
+    <app-projects></app-projects>
   </section>
 
   <section class="tile stack-tile">

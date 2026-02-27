@@ -2,7 +2,6 @@ import { Component, inject, input } from '@angular/core';
 import { About } from './core/features/about/about/about';
 import { Contact } from './core/features/contact/contact/contact';
 import { TechStack } from './core/features/tech-stack/tech-stack/tech-stack';
-import { Projects } from './core/features/projects/projects/projects';
 import { CustomCursorComponent } from './core/components/custom-cursor/custom-cursor/custom-cursor';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { LandingPageComponent } from "./core/features/landing-page/landing-page/landing-page.component";
@@ -10,6 +9,8 @@ import { HeaderComponent } from './core/shared/header/header/header.component';
 import { LegalComponent } from './core/features/legal/legal.component';
 import { MatIcon } from '@angular/material/icon';
 import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { Projects } from './core/features/projects/projects';
+
 
 @Component({
   selector: 'app-root',
@@ -49,11 +50,12 @@ export class AppComponent {
   }
 
   openDetail(component: any) {
+    console.log('openDetail wurde aufgerufen für:', component);
     this.activeDialogRef = this.dialog.open(component, {
       width: '100vw',
       height: '100vh',
       maxWidth: '100vw',
-      panelClass: 'full-screen-modal',
+      panelClass: ['full-screen-modal', 'dark-theme'],
       data: { isExpanded: true }
     });
     console.log('Dialog geöffnet. Ref gespeichert:', this.activeDialogRef);
