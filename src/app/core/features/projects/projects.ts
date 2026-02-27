@@ -2,10 +2,11 @@ import { Component, inject, Input } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { PortfolioService } from './projects.service';
 import { Project } from './project.model';
+import { MatIcon, MatIconModule } from "@angular/material/icon";
 
 @Component({
   selector: 'app-projects',
-  imports: [TranslateModule],
+  imports: [TranslateModule, MatIconModule],
   standalone: true,
   templateUrl: './projects.html',
   styleUrl: './projects.scss',
