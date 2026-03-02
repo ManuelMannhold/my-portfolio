@@ -1,8 +1,10 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, EventEmitter, Inject, inject, Input, Optional, Output } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { PortfolioService } from './projects.service';
 import { Project } from './project.model';
-import { MatIcon, MatIconModule } from "@angular/material/icon";
+import { MatIconModule } from "@angular/material/icon";
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-projects',
@@ -12,7 +14,14 @@ import { MatIcon, MatIconModule } from "@angular/material/icon";
   styleUrl: './projects.scss',
 })
 export class Projects {
-   @Input() isModal: boolean = false;
+  @Input() isModal: boolean = false;
+
+  constructor(
+    @Optional() @Inject(MAT_DIALOG_DATA) public data: any,
+  ) {
+    this.isModal = !!data;
+  }
+
    translate = inject(TranslateService);
    projects: Project[] = [];
   filteredProjects: Project[] = [];

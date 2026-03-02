@@ -1,10 +1,11 @@
-import { Component, EventEmitter, Inject, inject, Input, Optional, Output } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject, inject, Input, Optional, Output } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-about',
+  standalone: true,
   imports: [TranslateModule, MatIconModule],
   templateUrl: './about.html',
   styleUrl: './about.scss',
@@ -14,7 +15,6 @@ export class About {
   @Input() isModal: boolean = false;
 
   constructor(
-    @Optional() private dialogRef: MatDialogRef<About>,
     @Optional() @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.isModal = !!data;
