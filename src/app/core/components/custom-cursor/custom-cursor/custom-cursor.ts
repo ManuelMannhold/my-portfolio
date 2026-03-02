@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
   `,
   styleUrls: ['./custom-cursor.scss']
 })
-export class CustomCursorComponent {
+export class CustomCursor {
   x = 0;
   y = 0;
   hoverText = '';

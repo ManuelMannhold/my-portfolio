@@ -1,42 +1,36 @@
-<div class="tech-wrapper" [class.is-modal]="isModal">
+@if (isModal) {
+<section class="tech-wrapper" [class.is-modal]="isModal">
+<header class="tech-header">
+  <div class="header-main">
+    <span class="blue-tag">Expertise</span>
+    <h2>Skills & Tools</h2>
+  </div>
+</header>
 
-  @if (isModal) {
-    <header class="tech-header">
-      <div class="header-main">
-        <span class="blue-tag">Expertise</span>
-        <h2>Skills & Tools</h2>
-      </div>
-    </header>
-
-    <div class="tech-grid">
-      <section class="tech-category">
-        <h3><mat-icon>html</mat-icon> Frontend</h3>
-        <div class="badges">
-          <div class="tech-badge"><mat-icon>javascript</mat-icon> <span>JavaScript</span></div>
-          <div class="tech-badge"><mat-icon>integration_instructions</mat-icon> <span>TypeScript</span></div>
-          <div class="tech-badge"><mat-icon>change_history</mat-icon> <span>Angular</span></div>
-          <div class="tech-badge"><mat-icon>css</mat-icon> <span>SCSS / CSS</span></div>
-        </div>
-      </section>
-
-      <section class="tech-category">
-        <h3><mat-icon>settings_ethernet</mat-icon> Backend & Tools</h3>
-        <div class="badges">
-          <div class="tech-badge"><mat-icon>local_fire_department</mat-icon> <span>Firebase</span></div>
-          <div class="tech-badge"><mat-icon>account_tree</mat-icon> <span>Git</span></div>
-          <div class="tech-badge"><mat-icon>layers</mat-icon> <span>Material</span></div>
-        </div>
-      </section>
+<div class="tech-grid">
+  <section class="tech-category">
+    <h3><mat-icon>html</mat-icon> Frontend</h3>
+    <div class="badges">
+      <div class="tech-badge"><mat-icon>javascript</mat-icon> <span>JavaScript</span></div>
+      <div class="tech-badge"><mat-icon>integration_instructions</mat-icon> <span>TypeScript</span></div>
+      <div class="tech-badge"><mat-icon>change_history</mat-icon> <span>Angular</span></div>
+      <div class="tech-badge"><mat-icon>css</mat-icon> <span>SCSS / CSS</span></div>
     </div>
-  } @else {
-    <div class="tech-preview">
-      <div class="icon-cloud">
-        <mat-icon>change_history</mat-icon>
-        <mat-icon>layers</mat-icon>
-        <mat-icon>local_fire_department</mat-icon>
-      </div>
-      <p class="preview-label">Tech Stack</p>
-    </div>
-  }
+  </section>
 
+  <section class="tech-category">
+    <h3><mat-icon>settings_ethernet</mat-icon> Backend & Tools</h3>
+    <div class="badges">
+      <div class="tech-badge"><mat-icon>local_fire_department</mat-icon> <span>Firebase</span></div>
+      <div class="tech-badge"><mat-icon>account_tree</mat-icon> <span>Git</span></div>
+      <div class="tech-badge"><mat-icon>layers</mat-icon> <span>Material</span></div>
+    </div>
+  </section>
 </div>
+</section>
+} @else {
+<header class="preview-header">
+  <span><mat-icon>code</mat-icon></span>
+  <h2>{{'myskills.skill' | translate}}</h2>
+</header>
+}

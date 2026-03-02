@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CustomCursor } from './custom-cursor';
 
 describe('CustomCursor', () => {

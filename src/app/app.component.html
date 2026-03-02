@@ -4,9 +4,7 @@
 <div class="modal-overlay" (click)="expandedTile = null"></div>
 }
 
-<app-header 
-  [isDetailView]="isDetailView" 
-  (backToGrid)="closeModalFromHeader()">
+<app-header [isDetailView]="isDetailView" (backToGrid)="closeModalFromHeader()">
 </app-header>
 
 <app-landing-page></app-landing-page>
@@ -16,7 +14,6 @@
   <section class="tile stack-tile" (click)="openDetail(About)" (mouseenter)="cursor.setHoverState(true, 'About Me')"
     (mouseleave)="cursor.setHoverState(false)">
     <app-about></app-about>
-
   </section>
 
   <section class="tile stack-tile" (click)="openDetail(TechStack)"
@@ -24,8 +21,8 @@
     <app-tech-stack></app-tech-stack>
   </section>
 
-  <section class="tile stack-tile" (click)="openDetail(Projects)"
-    (mouseenter)="cursor.setHoverState(true, 'Projects')" (mouseleave)="cursor.setHoverState(false)">
+  <section class="tile stack-tile" (click)="openDetail(Projects)" (mouseenter)="cursor.setHoverState(true, 'Projects')"
+    (mouseleave)="cursor.setHoverState(false)">
     <app-projects></app-projects>
   </section>
 

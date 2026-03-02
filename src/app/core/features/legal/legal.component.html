@@ -1,4 +1,5 @@
-<div class="legal-expanded-container">
+@if(isModal) {
+    <div class="legal-expanded-container">
     <header class="legal-header">
         <span class="blue-tag">{{'legal-notice.legalnotice' | translate}}</span>
         <h2>{{'legal-notice.title' | translate}}</h2>
@@ -81,3 +82,9 @@
         </section>
     </div>
 </div>
+} @else {
+    <header class="preview-header">
+    <span><mat-icon>policy</mat-icon></span>
+    <h2>{{'imprint.imprint' | translate}}</h2>
+  </header>
+}

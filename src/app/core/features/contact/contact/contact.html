@@ -1,1 +1,82 @@
-<p>contact works!</p>
+@if(isModal) {
+<div class="contact-container" id="contact-anchor">
+  <section class="contact-section">
+    <header class="section-header">
+      <span class="stripe-left"></span>
+      <h2 class="headline">{{'contact.contactheader' | translate}}</h2>
+      <span class="stripe-right"></span>
+    </header>
+
+    <div class="contact-content">
+      <div class="contact-info">
+        <h3>{{'contact.questions' | translate}}</h3>
+        <p>{{'contact.messageme' | translate}}</p>
+        <p>
+          {{'contact.frontend' | translate}} 
+          <span class="highlight-blue" (click)="contactMe()">
+            {{'contact.contactme' | translate}}
+          </span>
+        </p>
+      </div>
+
+      <div class="contact-form-card">
+        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" class="styled-form">
+          <div class="input-group">
+            <input #name="ngModel" [(ngModel)]="contactData.name" name="name" type="text" 
+                   placeholder="{{'contact.addname' | translate}}" required>
+            @if(!name.valid && name.touched) {
+              <span class="error-msg">{{'contact.addname' | translate}}</span>
+            }
+          </div>
+
+          <div class="input-group">
+            <input #email="ngModel" [(ngModel)]="contactData.email" name="email" type="email"
+                   placeholder="{{'contact.placeholdermail' | translate}}" required
+                   pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+            @if(!email.valid && email.touched) {
+              <span class="error-msg">{{'contact.addmail' | translate}}</span>
+            }
+          </div>
+
+          <div class="input-group">
+            <textarea #message="ngModel" [(ngModel)]="contactData.message" name="message" 
+                      rows="5" placeholder="{{'contact.placeholdermessage' | translate}}" required></textarea>
+            @if(!message.valid && message.touched) {
+              <span class="error-msg">{{'contact.addmessage' | translate}}</span>
+            }
+          </div>
+
+          <div class="policy-check">
+            <img class="checkbox-icon" (click)="toggleImage()"
+                 [src]="showCheckbox ? 'assets/img/checkbox_empty.png' : 'assets/img/checkbox_checked.png'">
+            <p>
+              {{'contact.accept' | translate}} 
+              <a routerLink="/privacy-policy" class="policy-link">{{'contact.policy' | translate}}</a>
+            </p>
+          </div>
+
+          <div class="button-wrapper">
+            <button type="submit" [disabled]="!contactForm.valid || showCheckbox" 
+                    class="btn-submit" (click)="showOverlayMessageSend()">
+              {{'contact.sendmessage' | translate}}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div id="email-alert" class="d-none">
+    <div class="email-alert-content">
+      <h2>{{'contact.messagesend' | translate}}</h2>
+      <img src="assets/img/green-hook.png" alt="Success">
+    </div>
+  </div>
+</div>
+} 
+@else {
+    <header class="preview-header">
+    <span><mat-icon>email</mat-icon></span>
+    <h2>{{'contact.contactheader' | translate}}</h2>
+  </header>
+}

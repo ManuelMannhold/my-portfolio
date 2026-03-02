@@ -22,7 +22,7 @@
     "contact": "Kontakt"
   },
   "portfolio": {
-    "allProjects": "Alle Projekte",
+    "projects": "Meine Projekte",
     "examples": "Hier sind ein paar Beispiele meiner Projekte die ich Selbstständig, oder in Gruppenarbeit programmiert habe.",
     "join": "Ein Task manager inspiriert vom Kanban System. Erstellen und organisieren einzelner Tasks per drag and drop funktion.",
     "join-subtext": "Mein Part: AddTask / AddTask Board / Datenschutz / Rechtlicher Hinweis",
@@ -31,20 +31,6 @@
     "pokedex": "Ein selbst programmierter Pokédex auf Basis der PokéAPI.",
     "pronode": "Eine performante Angular-Anwendung zur Organisation von Notizen und Ordnern. Das Projekt kombiniert Echtzeit-Datenbank-Synchronisierung via Firebase mit einem modernen Glassmorphism-Design und intuitiven UX Design"
   },
-  "testimonials": [
-    {
-      "author": "Ina Penner",
-      "text": "Manuel zeigte in unserer Zusammenarbeit großes Engagement bei der Umsetzung unserer Webanwendung. Bei der Arbeit war er immer bereit seine Expertise einzubringen, somit unterstützte er das Team mit innovativen Ansätzen und stand Teammitglieder aktiv bei, wenn diese auf Herausforderungen stießen. Seine Fähigkeiten und seine Teamorientierung machte ihn zu einer wertvollen Ergänzung unseres Teams."
-    },
-    {
-      "author": "Miriam Fuchs",
-      "text": "Ich hatte die Gelegenheit, mit Manuel an einem Projekt zusammenzuarbeiten, und dabei konnte er vor allem durch seine Fachkenntnisse und seine Kreativität überzeugen. Besonders schätze ich seine Fähigkeit, Aufgaben effizient umzusetzen und neue Ideen einzubringen. Er geht offen auf Anregungen ein und zeigt dabei eine hohe Flexibilität, was die Zusammenarbeit sehr dynamisch gestaltet hat. Manuel hat sich gut in das Team integriert und mit seiner positiven Einstellung zur guten Arbeitsatmosphäre beigetragen."
-    },
-    {
-      "author": "Christopher Hampel",
-      "text": "Die Zusammenarbeit in unserem Teamprojekt mit Manuel Mannhold hat zu jeder Zeit sehr gut funktioniert. Durch seine fundierten Kenntnisse in der Webentwicklung war er ein maßgeblicher Faktor für den Erfolg unseres Softwareprojekts. Vor allem seine Hilfsbereitschaft bei Fragen und Problemen anderer Teammitglieder möchte ich hervorheben."
-    }
-  ],
   "contact": {
     "contactheader": "Kontakt",
     "questions": "Haben Sie fragen?",

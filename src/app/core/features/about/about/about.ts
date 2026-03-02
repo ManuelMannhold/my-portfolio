@@ -13,25 +13,10 @@ export class About {
   private translateService = inject(TranslateService);
   @Input() isModal: boolean = false;
 
-    @Output() openAsModal = new EventEmitter<void>();
-
   constructor(
     @Optional() private dialogRef: MatDialogRef<About>,
     @Optional() @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.isModal = !!data;
   }
-
-  openModal() {
-    if (!this.isModal) {
-      this.openAsModal.emit();
-    }
-  }
-
-  close() {
-    if (this.dialogRef) {
-      this.dialogRef.close();
-    }
-  }
-
 }
