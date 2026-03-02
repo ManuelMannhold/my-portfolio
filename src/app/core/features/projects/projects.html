@@ -12,43 +12,46 @@
 
   <div class="projects-grid">
     @for (project of filteredProjects; track project.id) {
-    <div class="project-card" [attr.data-type]="project.type">
-      <div class="project-image-wrapper">
-        @if (project.image) {
-        <img [src]="project.image" [alt]="project.title" class="project-image" />
-        }
-      </div>
-
-      <div class="project-content">
-        <h3 class="project-title">{{ project.title }}</h3>
-        <p class="project-tech">{{ project.tech }}</p>
-
-        @if (project.descriptionKey) {
-        <p class="project-description">
-          {{ project.descriptionKey | translate }}
-        </p>
-        }
-
-        <div class="project-links">
-          @if (project.liveUrl) {
-          <a [href]="project.liveUrl" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-            Live Test
-          </a>
-          }
-          @if (project.githubUrl) {
-          <a [href]="project.githubUrl" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-            GitHub
-          </a>
+    <a [href]="project.liveUrl" target="_blank" rel="noopener noreferrer">
+      <div class="project-card" [attr.data-type]="project.type">
+        <div class="project-image-wrapper">
+          @if (project.image) {
+          <img [src]="project.image" [alt]="project.title" class="project-image" />
           }
         </div>
+
+
+        <div class="project-content">
+          <h3 class="project-title">{{ project.title }}</h3>
+          <p class="project-tech">{{ project.tech }}</p>
+
+          @if (project.descriptionKey) {
+          <p class="project-description">
+            {{ project.descriptionKey | translate }}
+          </p>
+          }
+
+          <div class="project-links">
+            @if (project.liveUrl) {
+            <a [href]="project.liveUrl" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              Live Test
+            </a>
+            }
+            @if (project.githubUrl) {
+            <a [href]="project.githubUrl" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              GitHub
+            </a>
+            }
+          </div>
+        </div>
       </div>
-    </div>
+    </a>
     }
   </div>
 </section>
 } @else {
-   <header class="preview-header">
-    <span><mat-icon>folder_open</mat-icon></span>
-    <h2>{{'portfolio.projects' | translate}}</h2>
-  </header>
+<header class="preview-header">
+  <span><mat-icon>folder_open</mat-icon></span>
+  <h2>{{'portfolio.projects' | translate}}</h2>
+</header>
 }
