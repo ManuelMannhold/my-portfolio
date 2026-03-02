@@ -1,5 +1,3 @@
-<app-custom-cursor #cursor></app-custom-cursor>
-
 @if (expandedTile) {
 <div class="modal-overlay" (click)="expandedTile = null"></div>
 }
@@ -11,32 +9,41 @@
 
 <main class="bento-container">
 
-  <section class="tile stack-tile" (click)="openDetail(About)" (mouseenter)="cursor.setHoverState(true, 'About Me')"
-    (mouseleave)="cursor.setHoverState(false)">
-    <app-about></app-about>
-  </section>
+  <section class="tile stack-tile" 
+         (click)="openDetail(About)" 
+         (mouseover)="updateCursorHover(true, 'Mehr')"
+         (mouseleave)="updateCursorHover(false)">
+  <app-about></app-about>
+</section>
 
-  <section class="tile stack-tile" (click)="openDetail(TechStack)"
-    (mouseenter)="cursor.setHoverState(true, 'Tech Stack')" (mouseleave)="cursor.setHoverState(false)">
-    <app-tech-stack></app-tech-stack>
-  </section>
+<section class="tile stack-tile" 
+         (click)="openDetail(TechStack)"
+         (mouseenter)="updateCursorHover(true, 'Tech Stack')" 
+         (mouseleave)="updateCursorHover(false)">
+  <app-tech-stack></app-tech-stack>
+</section>
 
-  <section class="tile stack-tile" (click)="openDetail(Projects)" (mouseenter)="cursor.setHoverState(true, 'Projects')"
-    (mouseleave)="cursor.setHoverState(false)">
-    <app-projects></app-projects>
-  </section>
+<section class="tile stack-tile" 
+         (click)="openDetail(Projects)" 
+         (mouseenter)="updateCursorHover(true, 'Projects')"
+         (mouseleave)="updateCursorHover(false)">
+  <app-projects></app-projects>
+</section>
 
-  <section class="tile stack-tile">
-    <app-contact (openAsModal)="openDetail(Contact)" (mouseenter)="cursor.setHoverState(true, 'Contact')"
-      (mouseleave)="cursor.setHoverState(false)">>
-    </app-contact>
-  </section>
+<section class="tile stack-tile">
+  <app-contact (openAsModal)="openDetail(Contact)" 
+               (mouseenter)="updateCursorHover(true, 'Contact')"
+               (mouseleave)="updateCursorHover(false)">
+  </app-contact>
+</section>
 
+<section class="tile stack-tile">
+  <app-legal (openAsModal)="openDetail(Legal)" 
+             (mouseenter)="updateCursorHover(true, 'Legal Notice')"
+             (mouseleave)="updateCursorHover(false)">
+  </app-legal>
+</section>
 
-  <section class="tile stack-tile">
-    <app-legal (openAsModal)="openDetail(Legal)" (mouseenter)="cursor.setHoverState(true, 'Legal Notice')"
-      (mouseleave)="cursor.setHoverState(false)">>
-    </app-legal>
-  </section>
+<app-custom-cursor #appCursor></app-custom-cursor>
 
 </main>

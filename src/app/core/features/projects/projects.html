@@ -8,17 +8,6 @@
 
   <div class="filter-header">
     <p class="projects-description">{{ "portfolio.examples" | translate }}</p>
-    <div class="filter-buttons">
-      <button class="filter-btn" [class.active]="activeFilter === 'all'" (click)="setFilter('all')">
-        {{ "portfolio.allProjects" | translate }}
-      </button>
-      <button class="filter-btn" [class.active]="activeFilter === 'javascript'" (click)="setFilter('javascript')">
-        JavaScript
-      </button>
-      <button class="filter-btn" [class.active]="activeFilter === 'angular'" (click)="setFilter('angular')">
-        Angular
-      </button>
-    </div>
   </div>
 
   <div class="projects-grid">
