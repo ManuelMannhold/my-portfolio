@@ -60,7 +60,8 @@
     "messagesend": "The message has been sent",
     "addname": "Enter name.....",
     "placeholdermessage": "Enter message...",
-    "placeholdermail": "Enter Mail....."
+    "placeholdermail": "Enter Mail.....",
+    "noSpecialChars": "Special characters and emails are not allowed here."
   },
   "imprint": {
     "imprint": "Imprint"

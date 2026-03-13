@@ -46,7 +46,8 @@
     "messagesend": "Die Nachricht wurde gesendet",
     "addname": "Namen eingeben.....",
     "placeholdermessage": "Nachricht eingeben.....",
-    "placeholdermail": "Email eingeben....."
+    "placeholdermail": "Email eingeben.....",
+    "noSpecialChars": "Sonderzeichen und E-Mails sind hier nicht erlaubt."
   },
   "imprint": {
     "imprint": "Impressum"
