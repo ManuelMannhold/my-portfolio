@@ -50,8 +50,14 @@
   </div>
 </section>
 } @else {
-<header class="preview-header">
-  <span><mat-icon>folder_open</mat-icon></span>
-  <h2>{{'portfolio.projects' | translate}}</h2>
-</header>
-}
+<section class="tile stack-tile projects-preview">
+  <div class="mini-project-grid">
+    @for (project of filteredProjects.slice(0, 4); track project.id) {
+      <div class="mini-card">
+        <img [src]="project.image" [alt]="project.title">
+        <div class="mini-overlay"></div>
+      </div>
+    }
+  </div>
+</section>
+  }

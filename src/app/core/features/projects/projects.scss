@@ -184,3 +184,50 @@ section {
     }
   }
 }
+
+.projects-preview {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  .mini-project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    height: 100%;
+    width: 100%;
+    gap: 2px;
+
+    .mini-card {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 4px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .mini-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      &:hover {
+        img {
+          transform: scale(1.1);
+        }
+        .mini-overlay {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

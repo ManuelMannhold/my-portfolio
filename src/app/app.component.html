@@ -9,41 +9,36 @@
 
 <main class="bento-container">
 
-  <section class="tile stack-tile" 
-         (click)="openDetail(About)" 
-         (mouseover)="updateCursorHover(true, 'Mehr')"
-         (mouseleave)="updateCursorHover(false)">
-  <app-about></app-about>
-</section>
+  <section class="tile contact-tile">
+    <app-contact (openAsModal)="openDetail(Contact)" (mouseenter)="updateCursorHover(true, 'Contact')"
+      (mouseleave)="updateCursorHover(false)">
+    </app-contact>
+  </section>
 
-<section class="tile stack-tile" 
-         (click)="openDetail(TechStack)"
-         (mouseenter)="updateCursorHover(true, 'Tech Stack')" 
-         (mouseleave)="updateCursorHover(false)">
-  <app-tech-stack></app-tech-stack>
-</section>
+  <div class="middle-section">
+    <section class="tile about-tile" (click)="openDetail(About)" (mouseover)="updateCursorHover(true, 'Mehr')"
+      (mouseleave)="updateCursorHover(false)">
+      <app-about></app-about>
+    </section>
 
-<section class="tile stack-tile" 
-         (click)="openDetail(Projects)" 
-         (mouseenter)="updateCursorHover(true, 'Projects')"
-         (mouseleave)="updateCursorHover(false)">
-  <app-projects></app-projects>
-</section>
+    <section class="tile stack-tile" (click)="openDetail(TechStack)"
+      (mouseenter)="updateCursorHover(true, 'Tech Stack')" (mouseleave)="updateCursorHover(false)">
+      <app-tech-stack></app-tech-stack>
+    </section>
 
-<section class="tile stack-tile">
-  <app-contact (openAsModal)="openDetail(Contact)" 
-               (mouseenter)="updateCursorHover(true, 'Contact')"
-               (mouseleave)="updateCursorHover(false)">
-  </app-contact>
-</section>
+    <section class="tile stack-tile">
+      <app-legal (openAsModal)="openDetail(Legal)" (mouseenter)="updateCursorHover(true, 'Legal Notice')"
+        (mouseleave)="updateCursorHover(false)">
+      </app-legal>
+    </section>
 
-<section class="tile stack-tile">
-  <app-legal (openAsModal)="openDetail(Legal)" 
-             (mouseenter)="updateCursorHover(true, 'Legal Notice')"
-             (mouseleave)="updateCursorHover(false)">
-  </app-legal>
-</section>
+  </div>
 
-<app-custom-cursor #appCursor></app-custom-cursor>
+  <section class="tile projects-tile" (click)="openDetail(Projects)" (mouseenter)="updateCursorHover(true, 'Projects')"
+    (mouseleave)="updateCursorHover(false)">
+    <app-projects></app-projects>
+  </section>
+
+  <app-custom-cursor #appCursor></app-custom-cursor>
 
 </main>
