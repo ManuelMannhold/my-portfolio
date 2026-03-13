@@ -1,11 +1,10 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, EventEmitter, Inject, inject, Input, Optional, Output } from '@angular/core';
+import { Component, Inject, inject, Input, Optional } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
-import { TechStack } from '../../tech-stack/tech-stack/tech-stack';
 
 @Component({
   selector: 'app-contact',
@@ -15,12 +14,9 @@ import { TechStack } from '../../tech-stack/tech-stack/tech-stack';
   styleUrls: ['./contact.scss']
 })
 export class Contact {
-
-   @Output() openAsModal = new EventEmitter<void>();
   @Input() isModal: boolean = false;
 
   constructor(
-    @Optional() private dialogRef: MatDialogRef<TechStack> | null,
     @Optional() @Inject(MAT_DIALOG_DATA) public data: any,
   ) {
     this.isModal = !!data;
@@ -90,14 +86,12 @@ export class Contact {
     })
   }
 
-  /**
- * Angular lifecycle hook that is called after the component has been initialized.
- * Calls the `addInputEventListeners` method to set up necessary event listeners 
- * for input elements when the component is ready.
- */
-  ngOnInit() {
+ngOnInit() {
+  setTimeout(() => {
     this.addInputEventListeners();
-  }
+    this.contactMe();
+  }, 50);
+}
 
   /**
  * Toggles the visibility of a checkbox and updates the state of the contact form.

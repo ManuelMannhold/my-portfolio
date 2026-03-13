@@ -1,6 +1,5 @@
 @if(isModal) {
-<div class="contact-container" id="contact-anchor">
-  <section class="contact-section">
+  <section class="contact-section" [class.is-modal]="isModal">
     <header class="section-header">
       <span class="stripe-left"></span>
       <h2 class="headline">{{'contact.contactheader' | translate}}</h2>
@@ -72,11 +71,30 @@
       <img src="assets/img/green-hook.png" alt="Success">
     </div>
   </div>
-</div>
 } 
 @else {
-    <header class="preview-header">
-    <span><mat-icon>email</mat-icon></span>
+ <section class="contacts-preview">
+  <header class="preview-header">
+    <mat-icon>email</mat-icon>
     <h2>{{'contact.contactheader' | translate}}</h2>
   </header>
+
+  <form class="styled-form-mini">
+    <div class="input-minimal">
+      <input type="text" placeholder="{{'contact.addname' | translate}}" readonly>
+      <input type="email" placeholder="{{'contact.placeholdermail' | translate}}" readonly>
+      <textarea rows="3" placeholder="{{'contact.placeholdermessage' | translate}}" readonly></textarea>
+    </div>
+
+    <div class="mini-footer">
+      <div class="fake-policy">
+        <div class="dot"></div>
+        <p>{{'contact.accept' | translate}}</p>
+      </div>
+      <button type="button" class="btn-preview">
+        {{'contact.sendmessage' | translate}}
+      </button>
+    </div>
+  </form>
+</section>
 }

@@ -9,11 +9,10 @@
 
 <main class="bento-container">
 
-  <section class="tile contact-tile">
-    <app-contact (openAsModal)="openDetail(Contact)" (mouseenter)="updateCursorHover(true, 'Contact')"
+  <section class="tile contact-tile" (click)="openDetail(Contact)" (mouseover)="updateCursorHover(true, 'Mehr')"
       (mouseleave)="updateCursorHover(false)">
-    </app-contact>
-  </section>
+      <app-contact></app-contact>
+    </section>
 
   <div class="middle-section">
     <section class="tile about-tile" (click)="openDetail(About)" (mouseover)="updateCursorHover(true, 'Mehr')"
@@ -26,12 +25,10 @@
       <app-tech-stack></app-tech-stack>
     </section>
 
-    <section class="tile stack-tile">
-      <app-legal (openAsModal)="openDetail(Legal)" (mouseenter)="updateCursorHover(true, 'Legal Notice')"
-        (mouseleave)="updateCursorHover(false)">
-      </app-legal>
+    <section class="tile legal-tile" (click)="openDetail(Legal)" (mouseover)="updateCursorHover(true, 'Mehr')"
+      (mouseleave)="updateCursorHover(false)">
+      <app-legal></app-legal>
     </section>
-
   </div>
 
   <section class="tile projects-tile" (click)="openDetail(Projects)" (mouseenter)="updateCursorHover(true, 'Projects')"

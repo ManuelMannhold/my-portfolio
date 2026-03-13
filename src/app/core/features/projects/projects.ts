@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Inject, inject, Input, Optional, Output } from '@angular/core';
+import { Component, Inject, inject, Input, Optional } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { PortfolioService } from './projects.service';
 import { Project } from './project.model';

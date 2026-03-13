@@ -50,14 +50,15 @@
   </div>
 </section>
 } @else {
-<section class="tile stack-tile projects-preview">
-  <div class="mini-project-grid">
-    @for (project of filteredProjects.slice(0, 4); track project.id) {
-      <div class="mini-card">
-        <img [src]="project.image" [alt]="project.title">
-        <div class="mini-overlay"></div>
-      </div>
-    }
+<section class="projects-preview">
+  <header class="preview-header">
+    <mat-icon>folder</mat-icon>
+    <h2>Projekte</h2>
+  </header>
+  @for (project of filteredProjects.slice(0, 4); track project.id) {
+  <div class="mini-card">
+    <img [src]="project.image" [alt]="project.title">
   </div>
-</section>
   }
+</section>
+}

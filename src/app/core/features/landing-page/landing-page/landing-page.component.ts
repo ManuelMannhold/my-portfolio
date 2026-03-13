@@ -1,7 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 
-
 @Component({
   selector: 'app-landing-page',
   imports: [TranslateModule],
