@@ -6,6 +6,7 @@ export interface Project {
   tech: string;
   descriptionKey?: string;
   image?: string;
+  imageSecondary?: string;
   liveUrl?: string;
   githubUrl?: string;
   type: ProjectType;

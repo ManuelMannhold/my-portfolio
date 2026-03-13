@@ -53,7 +53,9 @@
               [src]="showCheckbox ? '/img/checkbox_checked.png' : '/img/checkbox_empty.png'">
             <p>
               {{'contact.accept' | translate}}
-              <a routerLink="/privacy-policy" class="policy-link">{{'contact.policy' | translate}}</a>
+              <a class="policy-link">
+                {{'contact.policy' | translate}}
+              </a>
             </p>
           </div>
 
@@ -94,7 +96,7 @@
     <div class="mini-footer">
       <div class="fake-policy">
         <div class="dot"></div>
-        <p>{{'contact.accept' | translate}}</p>
+        <p>{{'contact.accept' | translate}} {{'contact.policy' | translate}}</p>
       </div>
       <button type="button" class="btn-preview">
         {{'contact.sendmessage' | translate}}

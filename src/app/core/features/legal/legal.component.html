@@ -1,12 +1,12 @@
 @if(isModal) {
-    <div class="legal-expanded-container">
+    <div class="legal-expanded-container"  [class.is-modal]="isModal">
     <header class="legal-header">
         <span class="blue-tag">{{'legal-notice.legalnotice' | translate}}</span>
         <h2>{{'legal-notice.title' | translate}}</h2>
     </header>
 
     <div class="legal-grid">
-        <section class="legal-section">
+        <section class="legal-section" id="imprint">
             <div class="section-title">
                 <mat-icon>business</mat-icon>
                 <h3>{{'legal-notice.imprint' | translate}}</h3>
@@ -26,7 +26,7 @@
             </div>
         </section>
 
-        <section class="legal-section">
+        <section class="legal-section" id="privacy">
             <div class="section-title">
                 <mat-icon>security</mat-icon>
                 <h3>{{'legal-notice.privacy' | translate}}</h3>

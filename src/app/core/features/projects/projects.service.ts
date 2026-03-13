@@ -30,6 +30,7 @@ export class PortfolioService {
       tech: 'TypeScript | Angular | Firebase | Angular Material',
       descriptionKey: 'portfolio.pronode',
       image: '/img/pronode-project.png',
+      imageSecondary: '/img/pronode-login.png',
       liveUrl: 'https://pronode.manuel-mannhold.de/login',
       githubUrl: 'https://github.com/ManuelMannhold/proNode',
       type: 'angular',

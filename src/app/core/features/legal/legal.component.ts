@@ -1,4 +1,5 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, Inject, inject, Input, Optional } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatIcon } from '@angular/material/icon';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
@@ -11,4 +12,10 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 export class LegalComponent {
   private translateService = inject(TranslateService);
   @Input() isModal: boolean = false;
+
+  constructor(
+    @Optional() @Inject(MAT_DIALOG_DATA) public data: any
+  ) {
+    this.isModal = !!data;
+  }
 }

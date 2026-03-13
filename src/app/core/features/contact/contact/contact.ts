@@ -1,10 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, Inject, inject, Input, Optional, ViewChild } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { LegalComponent } from '../../legal/legal.component';
 
 @Component({
   selector: 'app-contact',
@@ -17,8 +18,9 @@ export class Contact {
   @Input() isModal: boolean = false;
   @ViewChild('nameInput') nameInputField!: ElementRef<HTMLInputElement>;
 
+
   private http = inject(HttpClient);
-  
+
   contactData = {
     name: "",
     email: "",
@@ -31,7 +33,7 @@ export class Contact {
 
   private readonly endPoint = 'https://manuel-mannhold.de/sendMail.php';
 
-  constructor(@Optional() @Inject(MAT_DIALOG_DATA) public data: any) {
+  constructor(@Optional() @Inject(MAT_DIALOG_DATA) public data: any, private dialog: MatDialog) {
     this.isModal = !!data;
   }
 

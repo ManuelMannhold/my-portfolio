@@ -16,7 +16,14 @@
       <div class="project-card" [attr.data-type]="project.type">
         <div class="project-image-wrapper">
           @if (project.image) {
+          @if (project.title === 'ProNode' && project.imageSecondary) {
           <img [src]="project.image" [alt]="project.title" class="project-image" />
+
+          <img [src]="project.imageSecondary" [alt]="project.title" class="project-image secondary-fade"
+            [class.visible]="showSecondaryImage" />
+          } @else {
+          <img [src]="project.image" [alt]="project.title" class="project-image" />
+          }
           }
         </div>
 

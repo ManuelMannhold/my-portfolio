@@ -22,15 +22,28 @@ export class Projects {
     this.isModal = !!data;
   }
 
-   translate = inject(TranslateService);
-   projects: Project[] = [];
+  showSecondaryImage: boolean = false;
+  private imageInterval: any;
+  translate = inject(TranslateService);
+  projects: Project[] = [];
   filteredProjects: Project[] = [];
   activeFilter = 'all';
-   private portfolioService = inject(PortfolioService);
+  private portfolioService = inject(PortfolioService);
 
-   ngOnInit() {
+  ngOnInit() {
     this.projects = this.portfolioService.getProjects();
     this.filteredProjects = this.projects;
+    setTimeout(() => {
+    this.imageInterval = setInterval(() => {
+      this.showSecondaryImage = !this.showSecondaryImage;
+    }, 5000);
+  }, 2000);
+  }
+
+  ngOnDestroy() {
+    if (this.imageInterval) {
+      clearInterval(this.imageInterval);
+    }
   }
 
   setFilter(filter: string) {
