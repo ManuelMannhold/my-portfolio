@@ -13,19 +13,19 @@ html {
 }
 
 :root {
-  --bg-app: #121212; // Sehr dunkler Hintergrund für die gesamte App
-  --bg-card: #121212; // Dunkelgrau für die Kacheln
-  --bg-card-hover: #1a1a1a; // Etwas helleres Grau beim Hover
-  --primary-blue: #007bff; // Das leuchtende Blau für Buttons und Akzente
-  --text-primary: #ffffff; // Weißer Text für Überschriften
-  --text-secondary: #a0a0a0; // Hellgrauer Text für Beschreibungen
-  --border-color: rgba(255, 255, 255, 0.05); // Sehr dezenter Rahmen
-  --bg-primary: #0d1117; // Dunkler Hintergrund
-  --bg-secondary: #161b22; // Etwas hellere Hintergründe (Kacheln)
-  --text-primary: #ffffff; // Heller Text
-  --text-secondary: #a0a0a0; // Dezenter Text
-  --accent-blue: #007bff; // Dein Haupt-Blau
-  --border-color: rgba(255, 255, 255, 0.08); // Dezente Rahmen
+  --bg-app: #121212;
+  --bg-card: #121212;
+  --bg-card-hover: #1a1a1a;
+  --primary-blue: #007bff;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --border-color: rgba(255, 255, 255, 0.05);
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --accent-blue: #007bff;
+  --border-color: rgba(255, 255, 255, 0.08);
   --header-bg: rgba(0, 123, 255, 0.03);
   --header-border: rgba(0, 123, 255, 0.2);
   --shadow-color: rgba(0, 0, 0, 0.4);
@@ -41,12 +41,32 @@ body.light-mode {
   --accent-blue: #005bc5;
   --border-color: #dadddf;
   --header-bg: rgba(255, 255, 255, 0.7);
-  --header-border: #d1d1d1; // Etwas definierter für die Nav
+  --header-border: #d1d1d1;
   --shadow-color: rgba(0, 0, 0, 0.15);
   --box-shadow-blue: rgba(0, 91, 197, 0.15);
-  --tile-shadow: 0 10px 40px rgba(0, 0, 0, 0.04),
-    0 2px 10px rgba(0, 0, 0, 0.02);
+  --input-bg: #f8f9fa;
+  --input-border: #ced4da;
+  --tile-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
 }
+
+body.light-mode {
+  .input-group input, 
+  .input-group textarea {
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: var(--text-primary);
+
+    &:focus {
+      border-color: var(--accent-blue);
+      box-shadow: 0 0 0 3px var(--box-shadow-blue);
+    }
+    
+    &::placeholder {
+      color: #adb5bd;
+    }
+  }
+}
+
 
 // --- Globale Resets & Typografie ---
 * {
@@ -230,25 +250,25 @@ app-header {
 
 .full-screen-modal {
   z-index: 10000 !important;
-  
+
   .mat-mdc-dialog-container {
     padding: 0;
     background: #0a0f19;
   }
 }
 
-.cdk-overlay-backdrop-showing ~ .bento-container {
+.cdk-overlay-backdrop-showing~.bento-container {
   pointer-events: none !important;
 }
 
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
+input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover,
 textarea:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px rgba(0, 20, 50, 1) inset !important;
-  
+
   -webkit-text-fill-color: white !important;
 
   border: 1px solid var(--accent-blue) !important;
