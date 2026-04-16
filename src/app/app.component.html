@@ -2,40 +2,44 @@
 <div class="modal-overlay" (click)="expandedTile = null"></div>
 }
 
-<app-header [isDetailView]="isDetailView" (backToGrid)="closeModalFromHeader()">
-</app-header>
+<app-admin-indicator></app-admin-indicator>
 
-<app-landing-page></app-landing-page>
+<div [class.admin-mode]="(mode$ | async) === 'admin'">
+  <app-header [isDetailView]="isDetailView" (backToGrid)="closeModalFromHeader()">
+  </app-header>
 
-<main class="bento-container">
+  <app-landing-page></app-landing-page>
 
-  <section class="tile contact-tile" (click)="openDetail(Contact)" (mouseover)="updateCursorHover(true, 'Mehr')"
+  <main class="bento-container">
+
+    <section class="tile contact-tile" (click)="openDetail(Contact)" (mouseover)="updateCursorHover(true, 'Mehr')"
+        (mouseleave)="updateCursorHover(false)">
+        <app-contact></app-contact>
+      </section>
+
+    <div class="middle-section">
+      <section class="tile about-tile" (click)="openDetail(About)" (mouseover)="updateCursorHover(true, 'Mehr')"
+        (mouseleave)="updateCursorHover(false)">
+        <app-about></app-about>
+      </section>
+
+      <section class="tile stack-tile" (click)="openDetail(TechStack)"
+        (mouseenter)="updateCursorHover(true, 'Tech Stack')" (mouseleave)="updateCursorHover(false)">
+        <app-tech-stack></app-tech-stack>
+      </section>
+
+      <section class="tile legal-tile" (click)="openDetail(Legal)" (mouseover)="updateCursorHover(true, 'Mehr')"
+        (mouseleave)="updateCursorHover(false)">
+        <app-legal></app-legal>
+      </section>
+    </div>
+
+    <section class="tile projects-tile" (click)="openDetail(Projects)" (mouseenter)="updateCursorHover(true, 'Projects')"
       (mouseleave)="updateCursorHover(false)">
-      <app-contact></app-contact>
+      <app-projects></app-projects>
     </section>
 
-  <div class="middle-section">
-    <section class="tile about-tile" (click)="openDetail(About)" (mouseover)="updateCursorHover(true, 'Mehr')"
-      (mouseleave)="updateCursorHover(false)">
-      <app-about></app-about>
-    </section>
+    <app-custom-cursor #appCursor></app-custom-cursor>
 
-    <section class="tile stack-tile" (click)="openDetail(TechStack)"
-      (mouseenter)="updateCursorHover(true, 'Tech Stack')" (mouseleave)="updateCursorHover(false)">
-      <app-tech-stack></app-tech-stack>
-    </section>
-
-    <section class="tile legal-tile" (click)="openDetail(Legal)" (mouseover)="updateCursorHover(true, 'Mehr')"
-      (mouseleave)="updateCursorHover(false)">
-      <app-legal></app-legal>
-    </section>
-  </div>
-
-  <section class="tile projects-tile" (click)="openDetail(Projects)" (mouseenter)="updateCursorHover(true, 'Projects')"
-    (mouseleave)="updateCursorHover(false)">
-    <app-projects></app-projects>
-  </section>
-
-  <app-custom-cursor #appCursor></app-custom-cursor>
-
-</main>
+  </main>
+</div>

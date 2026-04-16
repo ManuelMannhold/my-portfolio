@@ -1,0 +1,10 @@
+<div class="mode-switcher-container">
+  <button 
+    class="mode-switch-btn"
+    [class.admin-mode]="(isAdminMode$ | async) === 'admin'"
+    [disabled]="isAnimating"
+    (click)="switchMode()"
+    title="Toggle between Coder and Admin mode">
+    <canvas #canvas class="mode-canvas"></canvas>
+  </button>
+</div>

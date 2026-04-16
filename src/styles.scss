@@ -33,6 +33,87 @@ html {
   --tile-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
+/* Admin Mode Colors */
+body.admin-mode {
+  --bg-primary: #0a0e27;
+  --bg-secondary: #0f1628;
+  --text-primary: #00ff41;
+  --text-secondary: #00d927;
+  --accent-blue: #4caf50;
+  --accent-green: #00ff41;
+  --accent-dark-green: #1b5e20;
+  --border-color: rgba(76, 175, 80, 0.15);
+  --header-bg: rgba(76, 175, 80, 0.05);
+  --header-border: rgba(76, 175, 80, 0.3);
+  --shadow-color: rgba(0, 0, 0, 0.6);
+  --box-shadow-green: rgba(76, 175, 80, 0.3);
+  --tile-shadow: 0 4px 20px rgba(76, 175, 80, 0.15);
+  
+  color: var(--accent-green);
+  background-color: var(--bg-primary);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
+  /* Terminal/Matrix Effect */
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.5px;
+
+  /* CRT Screen Effect */
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      rgba(76, 175, 80, 0.03) 0px,
+      rgba(76, 175, 80, 0.03) 1px,
+      transparent 1px,
+      transparent 2px
+    ),
+    radial-gradient(
+      ellipse at center,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.3) 100%
+    );
+  background-attachment: fixed;
+  
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(circle at 20% 50%, rgba(76, 175, 80, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(76, 175, 80, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  &::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.15) 0px,
+      rgba(0, 0, 0, 0.15) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+    pointer-events: none;
+    z-index: -1;
+    animation: flicker-bg 0.15s infinite;
+  }
+
+  /* Matrix watermark background pattern */
+  background-attachment: fixed;
+  
+  /* Glow effect */
+  box-shadow: inset 0 0 100px rgba(76, 175, 80, 0.05);
+  animation: glow-pulse 4s ease-in-out infinite;
+}
+
 body.light-mode {
   --bg-primary: #eff1f3;
   --bg-secondary: #ffffff;
@@ -274,4 +355,32 @@ textarea:-webkit-autofill:focus {
   border: 1px solid var(--accent-blue) !important;
 
   transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Admin Mode Background Animations */
+@keyframes flicker-bg {
+  0%, 100% {
+    opacity: 1;
+  }
+  5% {
+    opacity: 0.98;
+  }
+  10% {
+    opacity: 1;
+  }
+  15% {
+    opacity: 0.97;
+  }
+  20% {
+    opacity: 1;
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: inset 0 0 100px rgba(76, 175, 80, 0.05);
+  }
+  50% {
+    box-shadow: inset 0 0 150px rgba(76, 175, 80, 0.1);
+  }
 }

@@ -9,11 +9,15 @@ import { HeaderComponent } from './core/shared/header/header/header.component';
 import { LegalComponent } from './core/features/legal/legal.component';
 import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { Projects } from './core/features/projects/projects';
+import { AdminIndicator } from './core/components/admin-indicator/admin-indicator';
+import { ModeService } from './core/services/mode.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
+    CommonModule,
     About,
     Contact,
     TechStack,
@@ -23,7 +27,8 @@ import { Projects } from './core/features/projects/projects';
     LandingPageComponent,
     HeaderComponent,
     LegalComponent,
-    MatDialogModule
+    MatDialogModule,
+    AdminIndicator
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -31,6 +36,7 @@ import { Projects } from './core/features/projects/projects';
 export class AppComponent {
   private translate = inject(TranslateService);
   private dialog = inject(MatDialog);
+  protected modeService = inject(ModeService);
 
   @ViewChild('appCursor') cursorComponent!: CustomCursor;
 
@@ -42,6 +48,7 @@ export class AppComponent {
   Contact = Contact;
   Projects = Projects;
   Legal = LegalComponent;
+  mode$ = this.modeService.mode$;
 
   constructor() {
     this.translate.setDefaultLang('de');

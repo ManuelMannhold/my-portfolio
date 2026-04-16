@@ -20,6 +20,13 @@
       </button>
     </div>
     <div class="right-section">
+      <button 
+        class="mode-switch-header"
+        [class.admin-mode]="(mode$ | async) === 'admin'"
+        (click)="toggleMode()"
+        title="Toggle between Coder and Admin mode">
+        <canvas #canvas class="mode-canvas-header"></canvas>
+      </button>
       <button mat-icon-button (click)="toggleTheme()" class="theme-toggle-btn">
         <mat-icon>{{ isDarkMode ? 'light_mode' : 'dark_mode' }}</mat-icon>
       </button>
