@@ -25,7 +25,27 @@
         [class.admin-mode]="(mode$ | async) === 'admin'"
         (click)="toggleMode()"
         title="Toggle between Coder and Admin mode">
-        <canvas #canvas class="mode-canvas-header"></canvas>
+        <svg class="mode-svg-header" viewBox="0 0 44 44" width="44" height="44">
+          <!-- Plug (left side) -->
+          <circle [attr.cx]="getPlugX()" [attr.cy]="22" [attr.r]="3" 
+                  [attr.fill]="(mode$ | async) === 'admin' ? '#4caf50' : '#64b5f6'"/>
+          
+          <!-- Server box (right side) -->
+          <rect [attr.x]="26" [attr.y]="16" width="10" height="12" fill="none"
+                [attr.stroke]="(mode$ | async) === 'admin' ? '#4caf50' : '#64b5f6'"
+                stroke-width="1"/>
+          
+          <!-- Power indicators (admin mode only) -->
+          @if ((mode$ | async) === 'admin') {
+            <circle cx="29" cy="18" r="1.5" fill="#4caf50"/>
+            <circle cx="32" cy="18" r="1.5" fill="#4caf50"/>
+          }
+          
+          <!-- Cable -->
+          <path [attr.d]="getCablePath()" fill="none"
+                [attr.stroke]="(mode$ | async) === 'admin' ? '#4caf50' : '#64b5f6'"
+                stroke-width="1"/>
+        </svg>
       </button>
       <button mat-icon-button (click)="toggleTheme()" class="theme-toggle-btn">
         <mat-icon>{{ isDarkMode ? 'light_mode' : 'dark_mode' }}</mat-icon>
