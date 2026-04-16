@@ -69,19 +69,19 @@ export class ModeSwitcher implements AfterViewInit {
     ctx.lineWidth = 2;
     ctx.strokeRect(centerX + 10, centerY - 15, 25, 30);
 
-    // Draw cable (disconnected)
+    // Draw cable (fully disconnected - floating away)
     ctx.strokeStyle = '#64b5f6';
     ctx.lineWidth = 2;
     ctx.beginPath();
     ctx.moveTo(centerX - 12, centerY);
-    ctx.quadraticCurveTo(centerX - 5, centerY - 15, centerX + 10, centerY - 8);
+    ctx.quadraticCurveTo(centerX + 5, centerY - 25, centerX - 5, centerY - 30);
     ctx.stroke();
 
     // Label
     ctx.fillStyle = '#64b5f6';
     ctx.font = '11px monospace';
     ctx.textAlign = 'center';
-    ctx.fillText('CONNECT', centerX + 22, centerY + 25);
+    ctx.fillText('DISCONNECTED', centerX + 22, centerY + 25);
   }
 
   private drawAdminState(ctx: CanvasRenderingContext2D): void {
@@ -106,7 +106,7 @@ export class ModeSwitcher implements AfterViewInit {
     ctx.fillRect(centerX + 20, centerY - 10, 4, 4);
     ctx.fillRect(centerX + 26, centerY - 10, 4, 4);
 
-    // Draw cable (connected)
+    // Draw cable (firmly connected to server)
     ctx.strokeStyle = '#4caf50';
     ctx.lineWidth = 2;
     ctx.beginPath();
@@ -118,7 +118,7 @@ export class ModeSwitcher implements AfterViewInit {
     ctx.fillStyle = '#4caf50';
     ctx.font = '11px monospace';
     ctx.textAlign = 'center';
-    ctx.fillText('ACTIVE', centerX + 22, centerY + 25);
+    ctx.fillText('CONNECTED', centerX + 22, centerY + 25);
   }
 
   private animatePlugConnection(callback: () => void): void {

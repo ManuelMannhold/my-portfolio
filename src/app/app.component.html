@@ -4,13 +4,12 @@
 
 <app-admin-indicator></app-admin-indicator>
 
-<div [class.admin-mode]="(mode$ | async) === 'admin'">
-  <app-header [isDetailView]="isDetailView" (backToGrid)="closeModalFromHeader()">
-  </app-header>
+<app-header [isDetailView]="isDetailView" (backToGrid)="closeModalFromHeader()">
+</app-header>
 
-  <app-landing-page></app-landing-page>
+<app-landing-page></app-landing-page>
 
-  <main class="bento-container">
+<main class="bento-container">
 
     <section class="tile contact-tile" (click)="openDetail(Contact)" (mouseover)="updateCursorHover(true, 'Mehr')"
         (mouseleave)="updateCursorHover(false)">
@@ -42,4 +41,3 @@
     <app-custom-cursor #appCursor></app-custom-cursor>
 
   </main>
-</div>

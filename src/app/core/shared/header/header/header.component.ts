@@ -58,7 +58,10 @@ export class HeaderComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.drawInitialState();
+    // Delay to ensure DOM is fully rendered
+    setTimeout(() => {
+      this.drawInitialState();
+    }, 100);
   }
 
   toggleMode(): void {
@@ -76,79 +79,94 @@ export class HeaderComponent implements AfterViewInit {
 
   private drawInitialState(): void {
     const canvas = this.canvasRef?.nativeElement;
-    if (!canvas) return;
+    if (!canvas) {
+      console.warn('Canvas element not found');
+      return;
+    }
     
     const ctx = canvas.getContext('2d');
-    if (!ctx) return;
+    if (!ctx) {
+      console.warn('Could not get 2D context');
+      return;
+    }
 
-    const rect = canvas.getBoundingClientRect();
-    canvas.width = rect.width;
-    canvas.height = rect.height;
+    // Set explicit dimensions
+    canvas.width = 44;
+    canvas.height = 44;
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.scale(2, 2); // For sharp rendering on high DPI
+    
+    // Don't scale if dimensions are very small
+    if (canvas.width > 30 && canvas.height > 30) {
+      ctx.save();
+      ctx.scale(2, 2);
+    }
 
     if (this.modeService.isAdminMode()) {
       this.drawAdminState(ctx);
     } else {
       this.drawCoderState(ctx);
     }
+
+    if (canvas.width > 30 && canvas.height > 30) {
+      ctx.restore();
+    }
   }
 
   private drawCoderState(ctx: CanvasRenderingContext2D): void {
-    const width = ctx.canvas.width / 2;
-    const height = ctx.canvas.height / 2;
+    const width = ctx.canvas.width;
+    const height = ctx.canvas.height;
     const centerX = width / 2;
     const centerY = height / 2;
 
-    // Draw unplugged connector
+    // Draw unplugged connector (left side)
     ctx.fillStyle = '#64b5f6';
     ctx.beginPath();
-    ctx.arc(centerX - 8, centerY, 3, 0, Math.PI * 2);
+    ctx.arc(8, centerY, 3, 0, Math.PI * 2);
     ctx.fill();
 
-    // Draw server/device
+    // Draw server/device (right side)
     ctx.strokeStyle = '#64b5f6';
     ctx.lineWidth = 1;
-    ctx.strokeRect(centerX + 4, centerY - 6, 10, 12);
+    ctx.strokeRect(26, centerY - 6, 10, 12);
 
-    // Draw cable (disconnected)
+    // Draw cable (disconnected - floating)
     ctx.strokeStyle = '#64b5f6';
     ctx.lineWidth = 1;
     ctx.beginPath();
-    ctx.moveTo(centerX - 5, centerY);
-    ctx.quadraticCurveTo(centerX - 2, centerY - 6, centerX + 4, centerY - 3);
+    ctx.moveTo(11, centerY);
+    ctx.quadraticCurveTo(18, centerY - 10, 20, centerY - 12);
     ctx.stroke();
   }
 
   private drawAdminState(ctx: CanvasRenderingContext2D): void {
-    const width = ctx.canvas.width / 2;
-    const height = ctx.canvas.height / 2;
+    const width = ctx.canvas.width;
+    const height = ctx.canvas.height;
     const centerX = width / 2;
     const centerY = height / 2;
 
-    // Draw plugged connector
+    // Draw plugged connector (left side)
     ctx.fillStyle = '#4caf50';
     ctx.beginPath();
-    ctx.arc(centerX - 8, centerY, 3, 0, Math.PI * 2);
+    ctx.arc(8, centerY, 3, 0, Math.PI * 2);
     ctx.fill();
 
-    // Draw server with power
+    // Draw server with power (right side)
     ctx.strokeStyle = '#4caf50';
     ctx.lineWidth = 1;
-    ctx.strokeRect(centerX + 4, centerY - 6, 10, 12);
+    ctx.strokeRect(26, centerY - 6, 10, 12);
 
     // Power indicator
     ctx.fillStyle = '#4caf50';
-    ctx.fillRect(centerX + 6, centerY - 4, 1.5, 1.5);
-    ctx.fillRect(centerX + 9, centerY - 4, 1.5, 1.5);
+    ctx.fillRect(29, centerY - 4, 1.5, 1.5);
+    ctx.fillRect(32, centerY - 4, 1.5, 1.5);
 
     // Draw cable (connected)
     ctx.strokeStyle = '#4caf50';
     ctx.lineWidth = 1;
     ctx.beginPath();
-    ctx.moveTo(centerX - 5, centerY);
-    ctx.quadraticCurveTo(centerX - 2, centerY - 3, centerX + 4, centerY - 2);
+    ctx.moveTo(11, centerY);
+    ctx.quadraticCurveTo(16, centerY - 3, 26, centerY - 3);
     ctx.stroke();
   }
 

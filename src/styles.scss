@@ -128,9 +128,7 @@ body.light-mode {
   --input-bg: #f8f9fa;
   --input-border: #ced4da;
   --tile-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
-}
 
-body.light-mode {
   .input-group input, 
   .input-group textarea {
     background-color: var(--input-bg);
@@ -145,6 +143,35 @@ body.light-mode {
     &::placeholder {
       color: #adb5bd;
     }
+  }
+}
+
+/* Light Mode + Admin Mode Combination */
+body.light-mode.admin-mode {
+  --bg-primary: #e8f5e9;
+  --bg-secondary: #f1f8f6;
+  --text-primary: #1b5e20;
+  --text-secondary: #2e7d32;
+  --accent-blue: #4caf50;
+  --accent-green: #2e7d32;
+  --border-color: rgba(76, 175, 80, 0.3);
+  --header-bg: rgba(76, 175, 80, 0.08);
+  --header-border: rgba(76, 175, 80, 0.3);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --box-shadow-green: rgba(76, 175, 80, 0.2);
+  --tile-shadow: 0 4px 20px rgba(76, 175, 80, 0.1);
+  
+  /* Skip dark background effects in light mode */
+  background-image: none;
+  box-shadow: none;
+  animation: none;
+
+  &::before {
+    display: none;
+  }
+
+  &::after {
+    display: none;
   }
 }
 

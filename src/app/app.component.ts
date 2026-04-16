@@ -10,7 +10,6 @@ import { LegalComponent } from './core/features/legal/legal.component';
 import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { Projects } from './core/features/projects/projects';
 import { AdminIndicator } from './core/components/admin-indicator/admin-indicator';
-import { ModeService } from './core/services/mode.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -36,7 +35,6 @@ import { CommonModule } from '@angular/common';
 export class AppComponent {
   private translate = inject(TranslateService);
   private dialog = inject(MatDialog);
-  protected modeService = inject(ModeService);
 
   @ViewChild('appCursor') cursorComponent!: CustomCursor;
 
@@ -48,7 +46,6 @@ export class AppComponent {
   Contact = Contact;
   Projects = Projects;
   Legal = LegalComponent;
-  mode$ = this.modeService.mode$;
 
   constructor() {
     this.translate.setDefaultLang('de');

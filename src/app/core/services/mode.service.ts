@@ -26,12 +26,22 @@ export class ModeService {
   setMode(mode: PortfolioMode): void {
     this.modeSubject.next(mode);
     localStorage.setItem('portfolioMode', mode);
+    this.applyModeToDOM(mode);
+  }
+
+  private applyModeToDOM(mode: PortfolioMode): void {
+    if (mode === 'admin') {
+      document.body.classList.add('admin-mode');
+    } else {
+      document.body.classList.remove('admin-mode');
+    }
   }
 
   private loadSavedMode(): void {
     const saved = localStorage.getItem('portfolioMode') as PortfolioMode;
     if (saved) {
       this.modeSubject.next(saved);
+      this.applyModeToDOM(saved);
     }
   }
 
