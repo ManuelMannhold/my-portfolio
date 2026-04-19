@@ -106,10 +106,7 @@ body.admin-mode {
     animation: flicker-bg 0.15s infinite;
   }
 
-  /* Matrix watermark background pattern */
   background-attachment: fixed;
-  
-  /* Glow effect */
   box-shadow: inset 0 0 100px rgba(76, 175, 80, 0.05);
   animation: glow-pulse 4s ease-in-out infinite;
 }
