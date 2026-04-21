@@ -1,3 +1,5 @@
+<div [class.admin-shell-active]="(isAdminMode$ | async) === 'admin'">
+  
 @if (expandedTile) {
 <div class="modal-overlay" (click)="expandedTile = null"></div>
 }
@@ -41,3 +43,4 @@
     <app-custom-cursor #appCursor></app-custom-cursor>
 
   </main>
+  </div>

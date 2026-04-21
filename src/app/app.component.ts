@@ -11,6 +11,7 @@ import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dial
 import { Projects } from './core/features/projects/projects';
 import { AdminIndicator } from './core/components/admin-indicator/admin-indicator';
 import { CommonModule } from '@angular/common';
+import { ModeService } from './core/services/mode.service';
 
 @Component({
   selector: 'app-root',
@@ -33,6 +34,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
+  protected modeService = inject(ModeService);
+  isAdminMode$ = this.modeService.mode$;
   private translate = inject(TranslateService);
   private dialog = inject(MatDialog);
 

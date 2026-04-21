@@ -84,3 +84,47 @@
     height: 100%;
   }
 }
+
+/* Der globale Shell-Modus */
+.admin-shell-active {
+  background-color: #0c0c0c !important; /* Tiefschwarz */
+  color: #00ff41 !important; /* Matrix/Terminal-Grün */
+  font-family: 'Courier New', monospace !important;
+  transition: all 0.8s ease-in-out;
+
+  /* Alle Kacheln (Tiles) bekommen einen Terminal-Look */
+  .tile {
+    background: rgba(0, 20, 0, 0.9) !important;
+    border: 1px solid #00ff41 !important;
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.1) !important;
+    border-radius: 2px !important; // Kantiger wirkt mehr nach Linux
+    
+    // Deaktiviert Schatten oder Verläufe deiner normalen Ansicht
+    &::after, &::before { display: none; } 
+  }
+
+  /* Überschriften und Texte grün färben */
+  h1, h2, h3, p, span, div {
+    color: #00ff41 !important;
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
+  }
+
+  /* Der Custom Cursor bekommt einen Scanline-Effekt oder wird zum Block */
+  app-custom-cursor {
+    filter: drop-shadow(0 0 5px #00ff41);
+  }
+
+  /* Ein cooler Scanline-Effekt über dem ganzen Bildschirm */
+  &::before {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 1000; // Über alles legen
+    background-size: 100% 4px, 3px 100%;
+    pointer-events: none; // Klicks durchlassen!
+    opacity: 0.15;
+  }
+}
